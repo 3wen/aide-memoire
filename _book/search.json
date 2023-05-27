@@ -89,5 +89,26 @@
     "title": "2  Coloring words using markdown",
     "section": "4.1 With a different order for the facet elements",
     "text": "4.1 With a different order for the facet elements\nWe can use a trick, using {forcats} fct_reorder() function:\n\nIn a first step, we relevel the orginial variables that is used to create the faceting groups (not the one we just created to make it as a markdown string), using factor(), for example.\nIn a second step, we use the fct_reorder() on the variable used to create the faceting groups (the one we just created as a markdown string) and we apply the order of the numerical values corresponding to the levels of the releveled variables from Step 1.\n\n\ndf_plot <- \n  df_plot %>% \n  mutate(\n    Species = factor(\n      Species, levels = c(\"versicolor\", \"setosa\", \"virginica\")),\n    type = fct_reorder(type, as.numeric(Species))\n  )\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\nKeywords: ggplot2 markdown color colour"
+  },
+  {
+    "objectID": "git-rstudio.html#add-a-remote",
+    "href": "git-rstudio.html#add-a-remote",
+    "title": "3  Git and RStudio",
+    "section": "3.1 Add a remote",
+    "text": "3.1 Add a remote\nWith a shell, go to the folder which will be associated with a Git repository:\ngit remote add origin https://github.com/3wen/repo-name.git\ngit pull origin main\ngit remote -v\nIf the Pull/Push buttons are not available on RStudio:\ngit fetch origin\ngit pull origin main"
+  },
+  {
+    "objectID": "git-rstudio.html#new-commit",
+    "href": "git-rstudio.html#new-commit",
+    "title": "3  Git and RStudio",
+    "section": "3.2 New commit",
+    "text": "3.2 New commit\nIn RStudio:\n\nIn the Git tab, click on “Commit”\nA new window opens. Tick the box of each file to commit and add a commit message\nClick on the “Commit button”. This closes the window.\nIf you want to push the changes to the Git repository, in the Git tab, click on the “Push” button.\n\nOr, in a shell, to commit all changes:\ngit add --all\ngit commit -m \"Reason of the commit\"\ngit push -u origin main"
+  },
+  {
+    "objectID": "git-rstudio.html#problem-with-main-branch",
+    "href": "git-rstudio.html#problem-with-main-branch",
+    "title": "3  Git and RStudio",
+    "section": "3.3 Problem with main branch",
+    "text": "3.3 Problem with main branch\nTo list the local branches:\ngit branch\nTo delete a local branch:\ngit branch --delete <branchname>\nThen :\ngit push -u origin main"
   }
 ]

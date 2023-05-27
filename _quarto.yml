@@ -7,12 +7,13 @@ book:
   date: "5/27/2023"
   chapters:
     - index.qmd
-    - part: Colours
+    - part: R
       chapters:
       - colours.qmd
-    - part: Graphs
-      chapters:
       - color_words_markdown.qmd
+    - part: Git
+      chapters:
+      - git-rstudio.qmd
     - references.qmd
 
 bibliography: references.bib
