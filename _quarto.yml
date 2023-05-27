@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "Aide-memoire"
+  author: "Ewen Gallic"
+  date: "5/27/2023"
+  chapters:
+    - index.qmd
+    - part: Colours
+      chapters:
+      - colours.qmd
+    - part: Graphs
+      chapters:
+      - color_words_markdown.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: source
+

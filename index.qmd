@@ -1,0 +1,3 @@
+# Preface {.unnumbered}
+
+Aide-mémoire pour retrouver rapidement des routines effectuées relativement fréquemment sans pour autant qu'elles soient connues par cœur...
