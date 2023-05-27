@@ -2,6 +2,7 @@
 
 This notebook serves as a quick reference guide for various programming tasks, numerical tools, and procedures. It contains code snippets and explanations related to R, LaTeX, Markdown, Quarto, and other relevant tools.
 
+An HTML version is available on my website: <http://egallic.fr/Recherche/aide-memoire/>
 
 # Motivation
 
