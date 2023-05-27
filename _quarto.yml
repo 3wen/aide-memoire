@@ -5,6 +5,7 @@ book:
   title: "Aide-memoire"
   author: "Ewen Gallic"
   date: "5/27/2023"
+  repo-url: https://github.com/3wen/aide-memoire
   chapters:
     - index.qmd
     - part: R
