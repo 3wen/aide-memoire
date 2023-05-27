@@ -1,0 +1,59 @@
+# Git and RStudio
+
+See Chapter 14 of this excellent ebook: _Happy Git and GitHub for the useR_ by Jennifer Bryan <https://happygitwithr.com/troubleshooting.html>
+
+## Add a remote
+
+
+With a shell, go to the folder which will be associated with a Git repository:
+
+```{markdown}
+git remote add origin https://github.com/3wen/repo-name.git
+git pull origin main
+git remote -v
+```
+
+If the Pull/Push buttons are not available on RStudio:
+```{markdown}
+git fetch origin
+git pull origin main
+```
+
+
+## New commit
+
+In RStudio:
+
+- In the Git tab, click on "Commit"
+- A new window opens. Tick the box of each file to commit and add a commit message
+- Click on the "Commit button". This closes the window.
+- If you want to push the changes to the Git repository, in the Git tab, click on the "Push" button.
+
+
+Or, in a shell, to commit all changes:
+
+```{markdown}
+git add --all
+git commit -m "Reason of the commit"
+git push -u origin main
+```
+
+## Problem with main branch
+
+
+To list the local branches:
+```{markdown}
+git branch
+```
+
+To delete a local branch:
+
+```{markdown}
+git branch --delete <branchname>
+```
+
+Then :
+```{markdown}
+git push -u origin main
+```
+
