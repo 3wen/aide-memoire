@@ -1027,6 +1027,7 @@ rgb(0, 105, 60)
 
 ::::
 
+
 ```{r}
 vertAMUclair <- "#61C250"
 vertAMUPomme <- "#A5D867"
