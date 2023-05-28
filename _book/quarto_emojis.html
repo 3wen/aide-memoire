@@ -256,15 +256,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>An issue was opened on quarto-dev: <a href="https://github.com/quarto-dev/quarto-cli/issues/4492" class="uri">https://github.com/quarto-dev/quarto-cli/issues/4492</a>, but the <a href="https://github.com/quarto-dev/quarto-cli/issues/4492#issuecomment-1548655951">answer given by Susan VanderPlas unfortunately</a> does not work on my computer. This is my workaround this issue.</p>
 <ol type="1">
 <li><p>In the YAML, insert the following, to support the emojis in the PDF:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> scrreprt</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">include-in-header</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">- </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="ch">|</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    \usepackage{emoji}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at"> </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> scrreprt</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at"> </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at"> </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw"> - </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="ch">|</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>     \usepackage{emoji}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This loads the <a href="https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf">{emoji}</a> LaTeX package and as the latter requires lualatex as the pdf engine, we set the pdf engine to LuaLaTeX.</p></li>
 <li><p>To make the emojis also available on the HTML file, we also need to add the following instruction in the YAML:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">from</span><span class="kw">:</span><span class="at"> markdown+emoji</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">from</span><span class="kw">:</span><span class="at"> markdown+emoji</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
 <li><p>In each <code>qmd</code> file where we need to include emojis, we can define the following function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>emoji <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
