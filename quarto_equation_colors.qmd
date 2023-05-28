@@ -1,4 +1,4 @@
-# Colouring equations
+# Colours in equations
 
 
 $$
