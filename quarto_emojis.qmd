@@ -8,6 +8,7 @@ An issue was opened on quarto-dev: <https://github.com/quarto-dev/quarto-cli/iss
 
 
 1. In the YAML, insert the following, to support the emojis in the PDF:
+
     ```yml
 pdf:
     documentclass: scrreprt
@@ -15,10 +16,11 @@ pdf:
     include-in-header:
     - text: |
         \usepackage{emoji}
-     ```
+    ```
    This loads the [{emoji}](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf) LaTeX package and as the latter requires lualatex as the pdf engine, we set the pdf engine to LuaLaTeX.
    
 2. To make the emojis also available on the HTML file, we also need to add the following instruction in the YAML:
+
     ```yml
 from: markdown+emoji
     ```
