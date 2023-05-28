@@ -5,7 +5,7 @@ $$
 \definecolor{wongBlue}{RGB}{0, 114, 178}
 $$
 
-## Colors defined in TeX xcolor package
+## Colors defined in LaTeX xcolor package
 
 Let us say we have a quarto book we are working on and we would like the $\beta$ term in the following equation to appear in blue:
 $$y = X\beta + \varepsilon$$
