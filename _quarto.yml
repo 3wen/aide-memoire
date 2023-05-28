@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Aide-memoire"
+  title: "Aide-mémoire"
   author: "Ewen Gallic"
   date: "5/27/2023"
   repo-url: https://github.com/3wen/aide-memoire
@@ -10,11 +10,12 @@ book:
     - index.qmd
     - part: R
       chapters:
-      - colours.qmd
-      - color_words_markdown.qmd
+      - r_colour_palettes.qmd
+      - r_graphs_color_words_markdown.qmd
     - part: Quarto
       chapters:
       - quarto_equation_colors.qmd
+      - quarto_emojis.qmd
     - part: Git
       chapters:
       - git-rstudio.qmd
@@ -22,13 +23,18 @@ book:
 
 bibliography: references.bib
 
+from: markdown+emoji
+
+
 format:
   html:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    pdf-engine: lualatex
     include-in-header:
     - text: |
+        \usepackage{emoji}
         \usepackage{xcolor}
         \definecolor{wongBlue}{RGB}{0, 114, 178}
 
