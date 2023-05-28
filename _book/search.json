@@ -96,5 +96,12 @@
     "title": "3  Colouring equations",
     "section": "3.2 Colors defined by the user",
     "text": "3.2 Colors defined by the user\nHowever, what if we want the color to be a different blue, one that we define? For example, what if we want the color whose hexadecimal code is #0072B2?\n\nIn the qmd file in which the equation appears, we need to define the color using a LaTeX definition. Note that the RGB code is required. For some reasons I do not understand, we cannot use the HTML model.\n\n$$\n\\definecolor{wongBlue}{RGB}{0, 114, 178}\n$$\n\nWrite your equation with the newly-defined color\n\n$$y = X{\\color{wongBlue}\\beta} + \\varepsilon$$\n\n\\[y = X{\\color{wongBlue}\\beta} + \\varepsilon\\]\n\nIf the final document is a PDF file rendered by LaTeX, an additional step is required:\n\nIn the YAML, the LaTeX colours need to be defined as well. For example, you can do as follows:\n\npdf:\n documentclass: scrreprt\n include-in-header:\n - text: |\n     \\usepackage{xcolor}\n     \\definecolor{wongBlue}{RGB}{0, 114, 178}\n\n\n\nAs of today (May 2023), the definition of the colours must be made in each qmd file:\n\n$$\n\\definecolor{wongBlue}{RGB}{0, 114, 178}\n$$"
+  },
+  {
+    "objectID": "quarto_equation_colors.html#colors-defined-in-latex-xcolor-package",
+    "href": "quarto_equation_colors.html#colors-defined-in-latex-xcolor-package",
+    "title": "3  Colouring equations",
+    "section": "3.1 Colors defined in LaTeX xcolor package",
+    "text": "3.1 Colors defined in LaTeX xcolor package\nLet us say we have a quarto book we are working on and we would like the \\(\\beta\\) term in the following equation to appear in blue: \\[y = X\\beta + \\varepsilon\\] The following solution is easy:\n\n$$y = X{\\color{blue}\\beta} + \\varepsilon$$\n\n\\[y = X{\\color{blue}\\beta} + \\varepsilon\\]"
   }
 ]
