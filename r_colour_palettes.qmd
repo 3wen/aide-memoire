@@ -1,0 +1,1044 @@
+# Colours Palettes
+
+Here are some colours that I often use in R plots or in LaTeX documents. For each color, I provide the hexadecimal value and the RGB values. For some palettes, I gave names to the colors, so I provide some definitions in R and in LaTeX.
+
+For LaTeX, the following package needs to be loaded to define our own colors:
+```{latex, eval=FALSE}
+\usepackage[dvipsnames]{xcolor}
+```
+
+
+Cool stuff for colour picking: <https://davidmathlogic.com/colorblind/>
+
+```{r, echo=FALSE}
+#1+1
+```
+
+```{css, echo=FALSE}
+.sourceCode.r, div.sourceCode {
+  background-color: initial;
+  color: initial;
+}
+```
+
+
+## Colours that are ok for color blindness and for printers
+
+
+### Palette 1
+
+```{css, echo=FALSE}
+.color-light-blue {
+  background-color: #a6cee3;
+}
+.color-dark-blue {
+  background-color: #1f78b4;
+}
+.color-light-green {
+  background-color: #b2df8a;
+}
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-light-blue
+#| classes: color-light-blue
+#| 
+#a6cee3
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-light-blue
+#| classes: color-light-blue
+#| 
+rgb(166, 206, 227)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-dark-blue
+#| classes: color-dark-blue
+#1f78b4
+```
+```{markdown, eval=FALSE}
+#| class-source: color-dark-blue
+#| classes: color-dark-blue
+rgb(31, 120, 180)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-light-green
+#| classes: color-light-green
+#b2df8a
+```
+```{markdown, eval=FALSE}
+#| class-source: color-light-green
+#| classes: color-light-green
+rgb(178, 223, 138)
+```
+:::
+
+::::
+
+
+### Palette 2
+
+```{css, echo=FALSE}
+.color-deep-green {
+  background-color: #1b9e77;
+}
+.color-orange {
+  background-color: #d95f02;
+}
+.color-violet {
+  background-color: #7570b3;
+}
+```
+
+:::: {.columns}
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-deep-green
+#| classes: color-deep-green
+#| 
+#1b9e77
+```
+```{markdown, eval=FALSE}
+#| class-source: color-deep-green
+#| classes: color-deep-green
+#| 
+rgb(27, 158, 119)
+```
+:::
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-orange
+#| classes: color-orange
+#d95f02
+```
+```{markdown, eval=FALSE}
+#| class-source: color-orange
+#| classes: color-orange
+rgb(217, 95, 2)
+```
+:::
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-violet
+#| classes: color-violet
+#7570b3
+```
+```{markdown, eval=FALSE}
+#| class-source: color-violet
+#| classes: color-violet
+rgb(117, 112, 179)
+```
+:::
+::::
+
+
+
+### Palette 3
+
+```{css, echo=FALSE}
+
+.color-cold-green {
+  background-color: #66c2a5;
+}
+.color-tuile {
+  background-color: #fc8d62;
+}
+.color-cold-violet {
+  background-color: #8da0cb;
+}
+```
+
+:::: {.columns}
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-cold-green
+#| classes: color-cold-green
+#| 
+#66c2a5
+```
+```{markdown, eval=FALSE}
+#| class-source: color-cold-green
+#| classes: color-cold-green
+#| 
+rgb(102, 194, 165)
+```
+:::
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-tuile
+#| classes: color-tuile
+#fc8d62
+```
+```{markdown, eval=FALSE}
+#| class-source: color-tuile
+#| classes: color-tuile
+rgb(252, 141, 98)
+```
+:::
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-cold-violet
+#| classes: color-cold-violet
+#8da0cb
+```
+```{markdown, eval=FALSE}
+#| class-source: color-cold-violet
+#| classes: color-cold-violet
+rgb(141, 160, 203)
+```
+:::
+::::
+
+
+## Color blind friendly
+
+### Palette 1
+
+```{css, echo=FALSE}
+.color-rose {
+  background-color: #D81B60;
+}
+.color-bleu {
+  background-color: #1E88E5;
+}
+.color-cold-jaune {
+  background-color: #FFC107;
+}
+.color-vert {
+  background-color: #004D40;
+}
+```
+
+:::: {.columns}
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-rose
+#| classes: color-rose
+#| 
+#D81B60
+```
+```{markdown, eval=FALSE}
+#| class-source: color-rose
+#| classes: color-rose
+#| 
+rgb(216, 27, 96)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bleu
+#| classes: color-bleu
+#1E88E5
+```
+```{markdown, eval=FALSE}
+#| class-source: color-bleu
+#| classes: color-bleu
+rgb(30, 136, 229)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-jaune
+#| classes: color-cold-jaune
+#FFC107
+```
+```{markdown, eval=FALSE}
+#| class-source: color-jaune
+#| classes: color-cold-jaune
+rgb(255, 193, 7)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-vert
+#| classes: color-vert
+#004D40
+```
+```{markdown, eval=FALSE}
+#| class-source: color-vert
+#| classes: color-vert
+rgb(0, 77, 64)
+```
+:::
+::::
+
+
+### Palette 2 (Wong)
+
+From @wong_2011_Nature.
+
+```{css, echo=FALSE}
+.color-wong-black {
+  background-color: #000000;
+}
+.color-wong-gold {
+  background-color: #E69F00;
+}
+.color-wong-light-blue {
+  background-color: #56B4E9;
+}
+.color-wong-green {
+  background-color: #009E73;
+}
+.color-wong-yellow {
+  background-color: #F0E442;
+}
+.color-wong-blue {
+  background-color: #0072B2;
+}
+.color-wong-orange {
+  background-color: #D55E00;
+}
+.color-wong-purple {
+  background-color: #CC79A7;
+}
+```
+
+
+:::: {.columns}
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-black
+#| classes: color-wong-black
+#| 
+#000000
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-black
+#| classes: color-wong-black
+#| 
+rgb(0, 0, 0)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-gold
+#| classes: color-wong-gold
+#E69F00
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-gold
+#| classes: color-wong-gold
+rgb(230, 159, 0)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-light-blue
+#| classes: color-wong-light-blue
+#56B4E9
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-light-blue
+#| classes: color-wong-light-blue
+rgb(86, 180, 233)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-green
+#| classes: color-wong-green
+#009E73
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-green
+#| classes: color-wong-green
+rgb(0, 158, 115)
+```
+:::
+::::
+
+:::: {.columns}
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-yellow
+#| classes: color-wong-yellow
+#| 
+#000000
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-yellow
+#| classes: color-wong-yellow
+#| 
+rgb(240, 228, 66)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-blue
+#| classes: color-wong-blue
+#0072B2
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-blue
+#| classes: color-wong-blue
+rgb(0, 114, 178)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-orange
+#| classes: color-wong-orange
+#D55E00
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-orange
+#| classes: color-wong-orange
+rgb(213, 94, 0)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-wong-purple
+#| classes: color-wong-purple
+#CC79A7
+```
+```{markdown, eval=FALSE}
+#| class-source: color-wong-purple
+#| classes: color-wong-purple
+rgb(204, 121, 167)
+```
+:::
+::::
+
+
+```{r}
+wongBlack     <- "#000000"
+wongGold      <- "#E69F00"
+wongLightBlue <- "#56B4E9"
+wongGreen     <- "#009E73"
+wongYellow    <- "#F0E442"
+wongBlue      <- "#0072B2"
+wongOrange    <- "#D55E00"
+wongPurple    <- "#CC79A7"
+```
+
+```{tex, eval=FALSE}
+\definecolor{wongBlack}{RGB}{0,0,0}
+\definecolor{wongGold}{RGB}{230, 159, 0}
+\definecolor{wongLightBlue}{RGB}{86, 180, 233}
+\definecolor{wongGreen}{RGB}{0, 158, 115}
+\definecolor{wongYellow}{RGB}{240, 228, 66}
+\definecolor{wongBlue}{RGB}{0, 114, 178}
+\definecolor{wongOrange}{RGB}{213, 94, 0}
+\definecolor{wongPurple}{RGB}{204, 121, 167}
+```
+
+
+
+### Palette 3 (IBM)
+
+(The grey is an addition...)
+
+```{css, echo=FALSE}
+.color-IBM-blue {
+  background-color: #648FFF;
+}
+.color-IBM-purple {
+  background-color: #785EF0;
+}
+.color-IBM-magenta {
+  background-color: #DC267F;
+}
+.color-IBM-orange {
+  background-color: #FE6100;
+}
+.color-IBM-yellow {
+  background-color: #FFB000;
+}
+.color-gris {
+  background-color: #949698;
+}
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-blue
+#| classes: color-IBM-blue
+#| 
+#648FFF
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-blue
+#| classes: color-IBM-blue
+#| 
+rgb(100, 143, 255)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-purple
+#| classes: color-IBM-purple
+#785EF0
+```
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-purple
+#| classes: color-IBM-purple
+rgb(120, 94, 240)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-magenta
+#| classes: color-IBM-magenta
+#DC267F
+```
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-magenta
+#| classes: color-IBM-magenta
+rgb(220, 38, 127)
+```
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-orange
+#| classes: color-IBM-orange
+#| 
+#FE6100
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-orange
+#| classes: color-IBM-orange
+#| 
+rgb(254, 97, 0)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-yellow
+#| classes: color-IBM-yellow
+#FFB000
+```
+```{markdown, eval=FALSE}
+#| class-source: color-IBM-yellow
+#| classes: color-IBM-yellow
+rgb(255, 176, 0)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-gris
+#| classes: color-gris
+#949698
+```
+```{markdown, eval=FALSE}
+#| class-source: color-gris
+#| classes: color-gris
+rgb(148, 150, 152)
+```
+:::
+
+::::
+
+
+```{r}
+IBMBlue       <- "#648FFF"
+IBMPurple     <- "#785EF0"
+IBMMagenta    <- "#DC267F"
+IBMOrange     <- "#FE6100"
+IBMYellow     <- "#FFB000"
+gris          <- "#949698"
+```
+
+
+```{tex, eval=FALSE}
+\definecolor{IBMBlue}{HTML}{648FFF}
+\definecolor{IBMPurple}{HTML}{785EF0}
+\definecolor{IBMMagenta}{HTML}{DC267F}
+\definecolor{IBMOrange}{HTML}{FE6100}
+\definecolor{IBMYellow}{HTML}{FFB000}
+\definecolor{gris}{HTML}{949698}
+```
+
+
+### Palette 4
+
+
+```{css, echo=FALSE}
+.color-bleuTOL {
+  background-color: #332288;
+}
+.color-vertTOL {
+  background-color: #117733;
+}
+.color-vertClairTOL {
+  background-color: #44AA99;
+}
+.color-bleuClairTOL {
+  background-color: #88CCEE;
+}
+.color-sableTOL {
+  background-color: #DDCC77;
+}
+.color-parmeTOL {
+  background-color: #CC6677;
+}
+.color-magentaTOL {
+  background-color: #AA4499;
+}
+.color-roseTOL {
+  background-color: #882255;
+}
+```
+
+
+:::: {.columns}
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bleuTOL
+#| classes: color-bleuTOL
+#| 
+#332288
+```
+```{markdown, eval=FALSE}
+#| class-source: color-bleuTOL
+#| classes: color-bleuTOL
+#| 
+rgb(51, 34, 136)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-vertTOL
+#| classes: color-vertTOL
+#117733
+```
+```{markdown, eval=FALSE}
+#| class-source: color-vertTOL
+#| classes: color-vertTOL
+rgb(17, 119, 51)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-vertClairTOL
+#| classes: color-vertClairTOL
+#44AA99
+```
+```{markdown, eval=FALSE}
+#| class-source: color-vertClairTOL
+#| classes: color-vertClairTOL
+rgb(68, 170, 153)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bleuClairTOL
+#| classes: color-bleuClairTOL
+#88CCEE
+```
+```{markdown, eval=FALSE}
+#| class-source: color-bleuClairTOL
+#| classes: color-bleuClairTOL
+rgb(136, 204, 238)
+```
+:::
+::::
+
+:::: {.columns}
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-sableTOL
+#| classes: color-sableTOL
+#| 
+#DDCC77
+```
+```{markdown, eval=FALSE}
+#| class-source: color-sableTOL
+#| classes: color-sableTOL
+#| 
+rgb(221, 204, 119)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-parmeTOL
+#| classes: color-parmeTOL
+#CC6677
+```
+```{markdown, eval=FALSE}
+#| class-source: color-parmeTOL
+#| classes: color-parmeTOL
+rgb(204, 102, 119)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-magentaTOL
+#| classes: color-magentaTOL
+#AA4499
+```
+```{markdown, eval=FALSE}
+#| class-source: color-magentaTOL
+#| classes: color-magentaTOL
+rgb(170, 68, 153)
+```
+:::
+::: {.column width="25%"}
+```{markdown, eval=FALSE}
+#| class-source: color-roseTOL
+#| classes: color-roseTOL
+#882255
+```
+```{markdown, eval=FALSE}
+#| class-source: color-roseTOL
+#| classes: color-roseTOL
+rgb(136, 34, 85)
+```
+:::
+::::
+
+
+```{r}
+bleuTOL <- "#332288"
+vertTOL <- "#117733"
+vertClairTOL <- "#44AA99"
+bleuClairTOL <- "#88CCEE"
+sableTOL <- "#DDCC77"
+parmeTOL <- "#CC6677"
+magentaTOL <- "#AA4499"
+roseTOL <- "#882255"
+```
+
+
+```{tex, eval=FALSE}
+\definecolor{bleuTOL}{HTML}{332288}
+\definecolor{vertTOL}{HTML}{117733}
+\definecolor{vertClairTOL}{HTML}{44AA99}
+\definecolor{bleuClairTOL}{HTML}{88CCEE}
+\definecolor{sableTOL}{HTML}{DDCC77}
+\definecolor{parmeTOL}{HTML}{CC6677}
+\definecolor{magentaTOL}{HTML}{AA4499}
+\definecolor{roseTOL}{HTML}{882255}
+```
+
+
+
+
+## Aix-Marseille University colors
+
+### Orange
+
+```{css, echo=FALSE}
+.color-orangeAMUClair {
+  background-color: #FFA100;
+}
+.color-orangeAMUFonce {
+  background-color: #FB4F14;
+}
+.color-jauneAMU {
+  background-color: #EBB700;
+}
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-orangeAMUClair
+#| classes: color-orangeAMUClair
+#| 
+#FFA100
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-orangeAMUClair
+#| classes: color-orangeAMUClair
+#| 
+rgb(255, 161, 0)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-orangeAMUFonce
+#| classes: color-orangeAMUFonce
+#FB4F14
+```
+```{markdown, eval=FALSE}
+#| class-source: color-orangeAMUFonce
+#| classes: color-orangeAMUFonce
+rgb(251, 79, 20)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-jauneAMU
+#| classes: color-jauneAMU
+#EBB700
+```
+```{markdown, eval=FALSE}
+#| class-source: color-jauneAMU
+#| classes: color-jauneAMU
+rgb(235, 183, 0)
+```
+:::
+
+::::
+
+```{r}
+orangeAMUClair <- "#FFA100"
+orangeAMUFonce <- "#FB4F14"
+jauneAMU <- "#EBB700"
+```
+
+
+```{tex, eval=FALSE}
+\definecolor{orangeAMUClair}{RGB}{255,161,20}
+\definecolor{orangeAMUFonce}{RGB}{251,79,189}
+\definecolor{jauneAMU}{RGB}{235,183,0}
+```
+
+### Red
+
+
+```{css, echo=FALSE}
+.color-rougeAMUClair {
+  background-color: #CF2F44;
+}
+.color-rougeAMUMoyen {
+  background-color: #96172E;
+}
+.color-bordeauAMU {
+  background-color: #AA2F2F;
+}
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-rougeAMUClair
+#| classes: color-rougeAMUClair
+#| 
+#CF2F44
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-rougeAMUClair
+#| classes: color-rougeAMUClair
+#| 
+rgb(207, 47, 68)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-rougeAMUMoyen
+#| classes: color-rougeAMUMoyen
+#96172E
+```
+```{markdown, eval=FALSE}
+#| class-source: color-rougeAMUMoyen
+#| classes: color-rougeAMUMoyen
+rgb(150, 23, 46)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bordeauAMU
+#| classes: color-bordeauAMU
+#AA2F2F
+```
+```{markdown, eval=FALSE}
+#| class-source: color-bordeauAMU
+#| classes: color-bordeauAMU
+rgb(170, 47, 47)
+```
+:::
+
+::::
+
+```{r}
+rougeAMUClair <- "#CF2F44"
+rougeAMUMoyen <- "#96172E"
+bordeauAMU <- "#AA2F2F"
+```
+
+
+```{tex, eval=FALSE}
+\definecolor{rougeAMUClair}{RGB}{207,47,68}
+\definecolor{rougeAMUMoyen}{RGB}{150,23,46}
+\definecolor{bordeauAMU}{RGB}{170,47,47}
+```
+
+### Blue
+
+```{css, echo=FALSE}
+.color-bleuAMUMoyen {
+  background-color: #5482AB;
+}
+.color-bleuAMUFonce {
+  background-color: #005A8B;
+}
+.color-bleuAMUClair {
+  background-color: #00B0CA;
+}
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bleuAMUMoyen
+#| classes: color-bleuAMUMoyen
+#| 
+#5482AB
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-bleuAMUMoyen
+#| classes: color-bleuAMUMoyen
+#| 
+rgb(84, 130, 171)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bleuAMUFonce
+#| classes: color-bleuAMUFonce
+#005A8B
+```
+```{markdown, eval=FALSE}
+#| class-source: color-bleuAMUFonce
+#| classes: color-bleuAMUFonce
+rgb(0, 90, 139)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-bleuAMUClair
+#| classes: color-bleuAMUClair
+#00B0CA
+```
+```{markdown, eval=FALSE}
+#| class-source: color-bleuAMUClair
+#| classes: color-bleuAMUClair
+rgb(0, 176, 202)
+```
+:::
+
+::::
+
+```{r}
+bleuAMUMoyen <- "#5482AB"
+bleuAMUFonce <- "#005A8B"
+bleuAMUClair <- "#00B0CA"
+```
+
+
+```{tex, eval=FALSE}
+\definecolor{bleuAMUMoyen}{RGB}{84,130,171}
+\definecolor{bleuAMUFonce}{RGB}{0,90,139}
+\definecolor{bleuAMUClair}{RGB}{0,176,202}
+```
+
+### Green
+
+```{css, echo=FALSE}
+.color-vertAMUclair {
+  background-color: #61C250;
+}
+.color-vertAMUPomme {
+  background-color: #A5D867;
+}
+.color-vertAMUFonce {
+  background-color: #00693C;
+}
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-vertAMUclair
+#| classes: color-vertAMUclair
+#| 
+#61C250
+```
+
+```{markdown, eval=FALSE}
+#| class-source: color-vertAMUclair
+#| classes: color-vertAMUclair
+#| 
+rgb(97, 194, 80)
+```
+
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-vertAMUPomme
+#| classes: color-vertAMUPomme
+#A5D867
+```
+```{markdown, eval=FALSE}
+#| class-source: color-vertAMUPomme
+#| classes: color-vertAMUPomme
+rgb(165, 216, 103)
+```
+:::
+
+::: {.column width="33%"}
+```{markdown, eval=FALSE}
+#| class-source: color-vertAMUFonce
+#| classes: color-vertAMUFonce
+#00693C
+```
+```{markdown, eval=FALSE}
+#| class-source: color-vertAMUFonce
+#| classes: color-vertAMUFonce
+rgb(0, 105, 60)
+```
+:::
+
+::::
+
+
+
+```{r}
+vertAMUclair <- "#61C250"
+vertAMUPomme <- "#A5D867"
+vertAMUFonce <- "#00693C"
+```
+
+```{tex, eval=FALSE}
+\definecolor{vertAMUclair}{RGB}{97,194,80}
+\definecolor{vertAMUPomme}{RGB}{165,216,103}
+\definecolor{vertAMUFonce}{RGB}{0,105,60}
+```
+
+
