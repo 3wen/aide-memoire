@@ -103,5 +103,19 @@
     "title": "3  Colouring equations",
     "section": "3.1 Colors defined in LaTeX xcolor package",
     "text": "3.1 Colors defined in LaTeX xcolor package\nLet us say we have a quarto book we are working on and we would like the \\(\\beta\\) term in the following equation to appear in blue: \\[y = X\\beta + \\varepsilon\\] The following solution is easy:\n\n$$y = X{\\color{blue}\\beta} + \\varepsilon$$\n\n\\[y = X{\\color{blue}\\beta} + \\varepsilon\\]"
+  },
+  {
+    "objectID": "r_graphs_color_words_markdown.html#title-and-axis",
+    "href": "r_graphs_color_words_markdown.html#title-and-axis",
+    "title": "2  Word colouring on graphs",
+    "section": "2.1 Title and axis",
+    "text": "2.1 Title and axis\nWe use the span HTML element to put hexadecimal colors we desire for some text in the arguments x, y or title of the labs() function. Then, we need to update theme() function so that the elements axis.title.x, axis.title.y, and plot.title are correctly interpreted.\n\nggplot(\n  data = iris,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  labs(\n    x = \"<span style='color:#0072B2;'>**Sepal Length**</span>\",\n    y = \"<span style='font-size:14pt; color:#D55E00;'>Sepal Width</span>\",\n    title = str_c(\"<span style='font-size:14pt; color:#D55E00;'>Sepal Width\",\n                  \"</span> as a function of <span style='color:#0072B2;'>\",\n                  \"**Length**</span>\")\n  ) + \n  theme(\n    plot.title.position = \"plot\",\n    axis.title.x = element_markdown(),\n    axis.title.y = element_markdown(),\n    plot.title = element_markdown()\n  )"
+  },
+  {
+    "objectID": "r_graphs_color_words_markdown.html#facets",
+    "href": "r_graphs_color_words_markdown.html#facets",
+    "title": "2  Word colouring on graphs",
+    "section": "2.2 Facets",
+    "text": "2.2 Facets\nFirst, we define the colours.\n\ncol_species <- tribble(\n  ~Species, ~colours_species,\n  \"setosa\", \"#1b9e77\",\n  \"versicolor\",  \"#d95f02\",\n  \"virginica\", \"#7570b3\"\n)\n\nThen, using {glue}, we put the facet text in a span element, with the associated colour.\n\nlibrary(glue)\nlibrary(ggtext)\ndf_plot <- \n  iris %>% \n  left_join(col_species, by = \"Species\") %>% \n  mutate(\n    type = glue(\n      \"<span style='color:{colours_species};'>{Species}</span>\"\n    ),\n    type = as.character(type)\n  )\n\ndf_plot$type[1]\n\n[1] \"<span style='color:#1b9e77;'>setosa</span>\"\n\n\nThen, using {ggtext} element_markdown() function, the text can be interpreted as markdown.\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\n\n2.2.1 With a different order for the facet elements\nWe can use a trick, using {forcats} fct_reorder() function:\n\nIn a first step, we relevel the orginial variables that is used to create the faceting groups (not the one we just created to make it as a markdown string), using factor(), for example.\nIn a second step, we use the fct_reorder() on the variable used to create the faceting groups (the one we just created as a markdown string) and we apply the order of the numerical values corresponding to the levels of the releveled variables from Step 1.\n\n\ndf_plot <- \n  df_plot %>% \n  mutate(\n    Species = factor(\n      Species, levels = c(\"versicolor\", \"setosa\", \"virginica\")),\n    type = fct_reorder(type, as.numeric(Species))\n  )\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\nKeywords: ggplot2 markdown color colour"
   }
 ]

@@ -233,10 +233,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#title-and-axis" id="toc-title-and-axis" class="nav-link active" data-scroll-target="#title-and-axis"><span class="toc-section-number">3</span>  Title and axis</a></li>
-  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets"><span class="toc-section-number">4</span>  Facets</a>
+  <li><a href="#title-and-axis" id="toc-title-and-axis" class="nav-link active" data-scroll-target="#title-and-axis"><span class="toc-section-number">2.1</span>  Title and axis</a></li>
+  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets"><span class="toc-section-number">2.2</span>  Facets</a>
   <ul class="collapse">
-  <li><a href="#with-a-different-order-for-the-facet-elements" id="toc-with-a-different-order-for-the-facet-elements" class="nav-link" data-scroll-target="#with-a-different-order-for-the-facet-elements"><span class="toc-section-number">4.1</span>  With a different order for the facet elements</a></li>
+  <li><a href="#with-a-different-order-for-the-facet-elements" id="toc-with-a-different-order-for-the-facet-elements" class="nav-link" data-scroll-target="#with-a-different-order-for-the-facet-elements"><span class="toc-section-number">2.2.1</span>  With a different order for the facet elements</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -278,8 +278,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="title-and-axis" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Title and axis</h1>
+<section id="title-and-axis" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="title-and-axis"><span class="header-section-number">2.1</span> Title and axis</h2>
 <p>We use the <code>span</code> HTML element to put hexadecimal colors we desire for some text in the arguments <code>x</code>, <code>y</code> or <code>title</code> of the <code class="sourceCode r"><span class="fu">labs</span>()</code> function. Then, we need to update <code class="sourceCode r"><span class="fu">theme</span>()</code> function so that the elements <code>axis.title.x</code>, <code>axis.title.y</code>, and <code>plot.title</code> are correctly interpreted.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
@@ -308,8 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="facets" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Facets</h1>
+<section id="facets" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="facets"><span class="header-section-number">2.2</span> Facets</h2>
 <p>First, we define the colours.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>col_species <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
@@ -358,8 +358,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="r_graphs_color_words_markdown_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="with-a-different-order-for-the-facet-elements" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="with-a-different-order-for-the-facet-elements"><span class="header-section-number">4.1</span> With a different order for the facet elements</h2>
+<section id="with-a-different-order-for-the-facet-elements" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="with-a-different-order-for-the-facet-elements"><span class="header-section-number">2.2.1</span> With a different order for the facet elements</h3>
 <p>We can use a trick, using {forcats} <code class="sourceCode r"><span class="fu">fct_reorder</span>()</code> function:</p>
 <ol type="1">
 <li>In a first step, we relevel the orginial variables that is used to create the faceting groups (not the one we just created to make it as a markdown string), using <code class="sourceCode r"><span class="fu">factor</span>()</code>, for example.</li>
