@@ -1,0 +1,42 @@
+# Insert emojis
+
+[May 2023]
+
+The other day, [Bertille](bertillepicard.github.io/) told me she had troubles with Quarto and Emojis: the latter did not appear in the PDF documents. I thought it was pretty simple and I did not remember struggling with that. I should have guessed, however, if that Bertille was having an issue, it was not not on something trivial. The former solution that was working (or at least I believe so) with R markdown does not work with quarto...
+
+An issue was opened on quarto-dev: <https://github.com/quarto-dev/quarto-cli/issues/4492>, but the [answer given by Susan VanderPlas unfortunately](https://github.com/quarto-dev/quarto-cli/issues/4492#issuecomment-1548655951) does not work on my computer. This is my workaround this issue.
+
+
+1. In the YAML, insert the following, to support the emojis in the PDF:
+    ```yml
+pdf:
+    documentclass: scrreprt
+    pdf-engine: lualatex
+    include-in-header:
+    - text: |
+        \usepackage{emoji}
+     ```
+   This loads the [{emoji}](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf) LaTeX package and as the latter requires lualatex as the pdf engine, we set the pdf engine to LuaLaTeX.
+   
+2. To make the emojis also available on the HTML file, we also need to add the following instruction in the YAML:
+    ```yml
+from: markdown+emoji
+    ```
+
+3. In each `qmd` file where we need to include emojis, we can define the following function:
+   ```{r}
+emoji <- function(x) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\emoji{%s}", x)
+  } else if (knitr::is_html_output()) {
+    paste0(":", x, ":")
+  } else x
+}
+   ```
+
+4. In the `qmd` file, to insert an emoji, we need to know its name or alias as defined in the [{emoji} package documentation](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf).
+   ```{markdown, eval=FALSE}
+`r emoji("weary")`   
+   ```
+
+Here is the result: `r emoji("weary")`.
