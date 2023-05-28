@@ -63,7 +63,6 @@ emojis %>%
   unnest(aliases) %>% 
   select(emoji, alias = aliases, description, category, tags) %>% 
   mutate(r_emoji = emoji(alias)) %>% 
-  slice(1:2) %>% 
   knitr::kable()
 ```
 
