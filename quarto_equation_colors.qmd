@@ -16,6 +16,7 @@ $$y = X{\color{blue}\beta} + \varepsilon$$
 
 
 $$y = X{\color{blue}\beta} + \varepsilon$$
+
 ## Colors defined by the user
 
 However, what if we want the color to be a different blue, one that we define? For example, what if we want the color whose hexadecimal code is `#0072B2`?
