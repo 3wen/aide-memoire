@@ -1,3 +1,9 @@
 # Preface {.unnumbered}
 
-Aide-mémoire pour retrouver rapidement des routines effectuées relativement fréquemment sans pour autant qu'elles soient connues par cœur...
+This "ebook" serves as a quick reference guide for various programming tasks, numerical tools, and procedures. It contains code snippets and explanations related to R, LaTeX, Markdown, Quarto, and other relevant tools.
+
+The creation of this document follows a discussion I had with [Olivier L'Haridon](https://sites.google.com/site/olharidon/home) who suggested the idea of such a document. Having been won over by the idea, I took the liberty of revisiting it. The primary motivation behind creating this project was to address a common issue I encountered in my programming and numerical work—having to search for specific procedures and codes that I don't frequently use. I noticed that valuable time was often wasted trying to locate the exact location of these procedures within my notebooks, leading to delays and frustration. 
+
+By creating this "Aide-mémoire", I aim to centralize and organize all the necessary information, codes, and procedures that I frequently need but might not remember off the top of my head. This way, I can quickly access and retrieve the required information whenever I encounter a similar task in my work.
+
+I believe that sharing this guide on GitHub and making it available online may be of interest for those who have already some bacground knowledge in R, Markdown, and LaTeX and face the similar problems.
