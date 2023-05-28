@@ -1,0 +1,101 @@
+# Colouring equations
+
+
+$$
+\definecolor{wongBlue}{RGB}{0, 114, 178}
+$$
+
+## Colors defined in TeX xcolor package
+
+Let us say we have a quarto book we are working on and we would like the $\beta$ term in the following equation to appear in blue:
+$$y = X\beta + \varepsilon$$
+The following solution is easy:
+```{latex, eval=FALSE}
+$$y = X{\color{blue}\beta} + \varepsilon$$
+```
+
+
+$$y = X{\color{blue}\beta} + \varepsilon$$
+## Colors defined by the user
+
+However, what if we want the color to be a different blue, one that we define? For example, what if we want the color whose hexadecimal code is `#0072B2`?
+
+1. In the `qmd` file in which the equation appears, we need to define the color using a LaTeX definition. Note that the RGB code is required. For some reasons I do not understand, we cannot use the HTML model.
+   ```{markdown}
+$$
+\definecolor{wongBlue}{RGB}{0, 114, 178}
+$$
+   ```
+
+2. Write your equation with the newly-defined color
+   ```{markdown}
+$$y = X{\color{wongBlue}\beta} + \varepsilon$$
+   ```
+   $$y = X{\color{wongBlue}\beta} + \varepsilon$$
+
+If the final document is a PDF file rendered by LaTeX, an additional step is required:
+
+3. In the `YAML`, the LaTeX colours need to be defined as well. For example, you can do as follows:
+   ```{YAML}
+pdf:
+    documentclass: scrreprt
+    include-in-header:
+    - text: |
+        \usepackage{xcolor}
+        \definecolor{wongBlue}{RGB}{0, 114, 178}
+   ```
+
+:::{callout-note}
+
+As of today (May 2023), the definition of the colours must be made in each `qmd` file:
+```{markdown}
+$$
+\definecolor{wongBlue}{RGB}{0, 114, 178}
+$$
+```
+
+:::
+
+## Colouring words
+
+
+Now, what is we want to colour some words in the text, to match with the equations? Let us say that we want to describe the coefficient $\beta$ from the above example.
+
+Let us adapt the solution that was proposed in the Rmarkdown cookbook by Yihui Xie, Christophe Dervieux, and Emily Riederer ([See Chapter 5](https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html#using-an-r-function-to-write-raw-html-or-latex-code)).
+
+```{r, eval=TRUE}
+wongBlue <- "#0072B2"
+
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    if (grep(x = color, "^#")) {
+      color <- deparse(substitute(color))
+    }
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+            x)
+  } else x
+}
+```
+
+This piece of code, as suggested by [dj_a on stackoverflow](https://stackoverflow.com/a/73503490) can be saved in an R script, let us name it `_myfunctions.R`, and included in each `qmd` file that needs word to be be highlighted by a user-defined colour:
+
+```{{r}}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+#| file: _myfunctions.R
+```
+
+
+Then all we need to do is call the `colorize()`{.R} function as an inline code:
+```{markdown}
+The `r colorize("vector of coefficient", wongBlue)`,
+$\color{wongBlue}\beta$, is to be estimated, with OLS.
+```
+
+
+The `r colorize("vector of coefficient", wongBlue)`, $\color{wongBlue}\beta$, is to be estimated, with OLS.
+

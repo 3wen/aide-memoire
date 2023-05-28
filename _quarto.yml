@@ -12,6 +12,9 @@ book:
       chapters:
       - colours.qmd
       - color_words_markdown.qmd
+    - part: Quarto
+      chapters:
+      - quarto_equation_colors.qmd
     - part: Git
       chapters:
       - git-rstudio.qmd
@@ -24,6 +27,9 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    include-in-header:
+    - text: |
+        \usepackage{xcolor}
+        \definecolor{wongBlue}{RGB}{0, 114, 178}
 
 editor: source
-
