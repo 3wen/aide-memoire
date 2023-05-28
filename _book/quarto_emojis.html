@@ -194,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_equation_colors.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colouring equations</span></a>
+  <a href="./quarto_equation_colors.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colours in equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -229,7 +229,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#list-of-all-the-available-emojis" id="toc-list-of-all-the-available-emojis" class="nav-link active" data-scroll-target="#list-of-all-the-available-emojis"><span class="toc-section-number">4.1</span>  List of all the available emojis</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -273,9 +279,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>emoji <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (knitr<span class="sc">::</span><span class="fu">is_latex_output</span>()) {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">sprintf</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">emoji{%s}"</span>, x)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> stringr<span class="sc">::</span><span class="fu">str_c</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">emoji{"</span>, <span class="fu">str_replace_all</span>(x, <span class="st">"_"</span>, <span class="st">"-"</span>), <span class="st">"}"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (knitr<span class="sc">::</span><span class="fu">is_html_output</span>()) {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">paste0</span>(<span class="st">":"</span>, x, <span class="st">":"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> stringr<span class="sc">::</span><span class="fu">str_c</span>(<span class="st">":"</span>, x, <span class="st">":"</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> x</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
@@ -285,8 +291,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div></li>
 </ol>
 <p>Here is the result: <span class="emoji" data-emoji="weary">😩</span>.</p>
+<section id="list-of-all-the-available-emojis" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="list-of-all-the-available-emojis"><span class="header-section-number">4.1</span> List of all the available emojis</h2>
+<p>Let us list all the emojis using the work done by Xiangdong Zeng: <a href="https://github.com/stone-zeng/latex-emoji" class="uri">https://github.com/stone-zeng/latex-emoji</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download.file(</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "https://raw.githubusercontent.com/stone-zeng/latex-emoji/main/data/emoji.json", </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># destfile = "data/emoji.json")</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>emojis <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(<span class="st">"data/emoji.json"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<caption>List of emojis </caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 9%">
+<col style="width: 30%">
+<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">emoji</th>
+<th style="text-align: left;">alias</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">category</th>
+<th style="text-align: left;">tags</th>
+<th style="text-align: left;">r_emoji</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">😀</td>
+<td style="text-align: left;">grinning</td>
+<td style="text-align: left;">grinning face</td>
+<td style="text-align: left;">Smileys &amp; Emotion</td>
+<td style="text-align: left;">smile, happy</td>
+<td style="text-align: left;"><span class="emoji" data-emoji="grinning">😀</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">😃</td>
+<td style="text-align: left;">smiley</td>
+<td style="text-align: left;">grinning face with big eyes</td>
+<td style="text-align: left;">Smileys &amp; Emotion</td>
+<td style="text-align: left;">happy, joy , haha</td>
+<td style="text-align: left;"><span class="emoji" data-emoji="smiley">😃</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -425,7 +484,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./quarto_equation_colors.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colouring equations</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colours in equations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

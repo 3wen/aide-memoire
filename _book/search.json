@@ -51,7 +51,7 @@
   {
     "objectID": "quarto_equation_colors.html#colouring-words",
     "href": "quarto_equation_colors.html#colouring-words",
-    "title": "3  Colouring equations",
+    "title": "3  Colours in equations",
     "section": "3.3 Colouring words",
     "text": "3.3 Colouring words\nNow, what is we want to colour some words in the text, to match with the equations? Let us say that we want to describe the coefficient \\(\\beta\\) from the above example.\nLet us adapt the solution that was proposed in the Rmarkdown cookbook by Yihui Xie, Christophe Dervieux, and Emily Riederer (See Chapter 5).\n\nwongBlue <- \"#0072B2\"\n\ncolorize <- function(x, color) {\n  if (knitr::is_latex_output()) {\n    if (grep(x = color, \"^#\")) {\n      color <- deparse(substitute(color))\n    }\n    sprintf(\"\\\\textcolor{%s}{%s}\", color, x)\n  } else if (knitr::is_html_output()) {\n    sprintf(\"<span style='color: %s;'>%s</span>\", color,\n            x)\n  } else x\n}\n\nThis piece of code, as suggested by dj_a on stackoverflow can be saved in an R script, let us name it _myfunctions.R, and included in each qmd file that needs word to be be highlighted by a user-defined colour:\n```{r}\n#| echo: false\n#| eval: true\n#| message: false\n#| warning: false\n#| file: _myfunctions.R\n```\nThen all we need to do is call the colorize() function as an inline code:\n\nThe `r colorize(\"vector of coefficient\", wongBlue)`,\n$\\color{wongBlue}\\beta$, is to be estimated, with OLS.\n\nThe vector of coefficient, \\(\\color{wongBlue}\\beta\\), is to be estimated, with OLS."
   },
@@ -93,14 +93,14 @@
   {
     "objectID": "quarto_equation_colors.html#colors-defined-by-the-user",
     "href": "quarto_equation_colors.html#colors-defined-by-the-user",
-    "title": "3  Colouring equations",
+    "title": "3  Colours in equations",
     "section": "3.2 Colors defined by the user",
     "text": "3.2 Colors defined by the user\nHowever, what if we want the color to be a different blue, one that we define? For example, what if we want the color whose hexadecimal code is #0072B2?\n\nIn the qmd file in which the equation appears, we need to define the color using a LaTeX definition. Note that the RGB code is required. For some reasons I do not understand, we cannot use the HTML model.\n\n$$\n\\definecolor{wongBlue}{RGB}{0, 114, 178}\n$$\n\nWrite your equation with the newly-defined color\n\n$$y = X{\\color{wongBlue}\\beta} + \\varepsilon$$\n\n\\[y = X{\\color{wongBlue}\\beta} + \\varepsilon\\]\n\nIf the final document is a PDF file rendered by LaTeX, an additional step is required:\n\nIn the YAML, the LaTeX colours need to be defined as well. For example, you can do as follows:\n\npdf:\n documentclass: scrreprt\n include-in-header:\n - text: |\n     \\usepackage{xcolor}\n     \\definecolor{wongBlue}{RGB}{0, 114, 178}\n\n\n\nAs of today (May 2023), the definition of the colours must be made in each qmd file:\n\n$$\n\\definecolor{wongBlue}{RGB}{0, 114, 178}\n$$"
   },
   {
     "objectID": "quarto_equation_colors.html#colors-defined-in-latex-xcolor-package",
     "href": "quarto_equation_colors.html#colors-defined-in-latex-xcolor-package",
-    "title": "3  Colouring equations",
+    "title": "3  Colours in equations",
     "section": "3.1 Colors defined in LaTeX xcolor package",
     "text": "3.1 Colors defined in LaTeX xcolor package\nLet us say we have a quarto book we are working on and we would like the \\(\\beta\\) term in the following equation to appear in blue: \\[y = X\\beta + \\varepsilon\\] The following solution is easy:\n\n$$y = X{\\color{blue}\\beta} + \\varepsilon$$\n\n\\[y = X{\\color{blue}\\beta} + \\varepsilon\\]"
   },
@@ -117,5 +117,12 @@
     "title": "2  Word colouring on graphs",
     "section": "2.2 Facets",
     "text": "2.2 Facets\nFirst, we define the colours.\n\ncol_species <- tribble(\n  ~Species, ~colours_species,\n  \"setosa\", \"#1b9e77\",\n  \"versicolor\",  \"#d95f02\",\n  \"virginica\", \"#7570b3\"\n)\n\nThen, using {glue}, we put the facet text in a span element, with the associated colour.\n\nlibrary(glue)\nlibrary(ggtext)\ndf_plot <- \n  iris %>% \n  left_join(col_species, by = \"Species\") %>% \n  mutate(\n    type = glue(\n      \"<span style='color:{colours_species};'>{Species}</span>\"\n    ),\n    type = as.character(type)\n  )\n\ndf_plot$type[1]\n\n[1] \"<span style='color:#1b9e77;'>setosa</span>\"\n\n\nThen, using {ggtext} element_markdown() function, the text can be interpreted as markdown.\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\n\n2.2.1 With a different order for the facet elements\nWe can use a trick, using {forcats} fct_reorder() function:\n\nIn a first step, we relevel the orginial variables that is used to create the faceting groups (not the one we just created to make it as a markdown string), using factor(), for example.\nIn a second step, we use the fct_reorder() on the variable used to create the faceting groups (the one we just created as a markdown string) and we apply the order of the numerical values corresponding to the levels of the releveled variables from Step 1.\n\n\ndf_plot <- \n  df_plot %>% \n  mutate(\n    Species = factor(\n      Species, levels = c(\"versicolor\", \"setosa\", \"virginica\")),\n    type = fct_reorder(type, as.numeric(Species))\n  )\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\nKeywords: ggplot2 markdown color colour"
+  },
+  {
+    "objectID": "quarto_emojis.html#list-of-all-the-available-emojis",
+    "href": "quarto_emojis.html#list-of-all-the-available-emojis",
+    "title": "4  Insert emojis",
+    "section": "4.1 List of all the available emojis",
+    "text": "4.1 List of all the available emojis\nLet us list all the emojis using the work done by Xiangdong Zeng: https://github.com/stone-zeng/latex-emoji\n\n# download.file(\n# \"https://raw.githubusercontent.com/stone-zeng/latex-emoji/main/data/emoji.json\", \n# destfile = \"data/emoji.json\")\nemojis <- jsonlite::fromJSON(\"data/emoji.json\")\n\n\n\n\nList of emojis \n\n\n\n\n\n\n\n\n\n\nemoji\nalias\ndescription\ncategory\ntags\nr_emoji\n\n\n\n\n😀\ngrinning\ngrinning face\nSmileys & Emotion\nsmile, happy\n😀\n\n\n😃\nsmiley\ngrinning face with big eyes\nSmileys & Emotion\nhappy, joy , haha\n😃"
   }
 ]
