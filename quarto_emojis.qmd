@@ -1,47 +1,113 @@
 # Insert emojis
 
-[May 2023]
+\[May 2023\]
 
 The other day, [Bertille](bertillepicard.github.io/) told me she had troubles with Quarto and Emojis: the latter did not appear in the PDF documents. I thought it was pretty simple and I did not remember struggling with that. I should have guessed, however, if that Bertille was having an issue, it was not not on something trivial. The former solution that was working (or at least I believe so) with R markdown does not work with quarto...
 
 An issue was opened on quarto-dev: <https://github.com/quarto-dev/quarto-cli/issues/4492>, but the [answer given by Susan VanderPlas unfortunately](https://github.com/quarto-dev/quarto-cli/issues/4492#issuecomment-1548655951) does not work on my computer. This is my workaround this issue.
 
+1.  In the YAML, insert the following, to support the emojis in the PDF:
 
-1. In the YAML, insert the following, to support the emojis in the PDF:
-   ```{yml}
-pdf:
-    documentclass: scrreprt
-    pdf-engine: lualatex
-    include-in-header:
-    - text: |
-        \usepackage{emoji}
-   ```
-   This loads the [{emoji}](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf) LaTeX package and as the latter requires lualatex as the pdf engine, we set the pdf engine to LuaLaTeX.
-   
-2. To make the emojis also available on the HTML file, we also need to add the following instruction in the YAML:
+    ```{yaml}
+    pdf:
+     documentclass: scrreprt
+     pdf-engine: lualatex
+     include-in-header:
+     - text: |
+         \usepackage{emoji}
+    ```
 
-   ```{yml}
-from: markdown+emoji
-   ```
+    This loads the [{emoji}](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf) LaTeX package and as the latter requires lualatex as the pdf engine, we set the pdf engine to LuaLaTeX.
 
-3. In each `qmd` file where we need to include emojis, we can define the following function:
-   ```{r}
-emoji <- function(x) {
-  if (knitr::is_latex_output()) {
-    stringr::str_c("\\emoji{", str_replace_all(x, "_", "-"), "}")
-  } else if (knitr::is_html_output()) {
-    stringr::str_c(":", x, ":")
-  } else x
-}
-   ```
+2.  To make the emojis also available on the HTML file, we also need to add the following instruction in the YAML:
 
-4. In the `qmd` file, to insert an emoji, we need to know its name or alias as defined in the [{emoji} package documentation](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf).
-   ```{markdown, eval=FALSE}
-`r emoji("weary")`   
-   ```
+    ```{yaml}
+    from: markdown+emoji
+    ```
 
-Here is the result: `r emoji("weary")`.
+3.  In each `qmd` file where we need to include emojis, we can define:
 
+    - a tibble that contains the unicode runes corresponding to the different skin tones (5 of them)
+    - a tibble with the names of the emojis and the corresponding runes, from the [{emo(ji)}](https://github.com/hadley/emo) package
+    - a function that maps a name to the unicode runes and returns the emoji either for LaTeX output or HTML output.
+    - Note that some emojis are not in {emo(ji)} (e.g.: `weary`). For those, we use the standard way of writing in quarto.
+
+    ```{r}
+    modifier_sequence_tones <- 
+      tibble::tribble(
+        ~code_point, ~tone,
+        "1F3FB", "_light_skin_tone",
+        "1F3FC", "_medium_light_skin_tone",
+        "1F3FD", "_medium_skin_tone",
+        "1F3FE", "_medium_dark_skin_tone",
+        "1F3FF", "_dark_skin_tone"
+      )
+    emojis_all <- 
+      emo::jis |>
+      dplyr::mutate(alias = stringr::str_replace_all(name, " ", "_"),
+                    alias = stringr::str_replace_all(alias, "-", "_"),
+                    alias = stringr::str_remove_all(alias, ":"))
+    
+    emoji <- function(x) {
+      if(length(x) != 1)  
+          stop("Error: the length of x is not equal to 1.")
+      if (knitr::is_latex_output()) {
+        resul <- stringr::str_c("\\emoji{", stringr::str_replace_all(x, "_", "-"), "}")
+      } else if (knitr::is_html_output()) {
+        ind_match <- match(x, emojis_all$alias)
+        runes_match <- emojis_all$runes[ind_match]
+        if (!is.na(ind_match)) {
+          resul <- 
+            stringr::str_split(runes_match, " ") |>
+            purrr::map(~as.integer(as.hexmode(.))) |>
+            purrr::map(~intToUtf8(.)) |>
+            unlist()
+        } else {
+          resul <- stringr::str_c(":", x, ":")
+        }
+      } else {
+        resul <- x
+      }
+      resul
+    }
+    ```
+
+4.  In the `qmd` file, to insert an emoji, we need to know its name or alias as defined in the [{emoji} package documentation](https://ctan.math.washington.edu/tex-archive/macros/luatex/latex/emoji/emoji-doc.pdf).
+
+    ```{markdown}
+    `r emoji("weary")`
+    `r emoji("blue_heart")`
+    ```
+
+`r emoji("weary")`
+`r emoji("blue_heart")`
+
+
+## Skin tones
+
+To use different skin tones, whenever the emoji allows for it, we just need to append one of the following suffixes to the name of the emoji:
+
+- `"_light_skin_tone"`{.R}: light skin
+- `"_medium_light_skin_tone"`{.R}: medium light skin
+- `"_medium_skin_tone"`{.R}:  medium skin
+- `"_medium_dark_skin_tone"`{.R}: medium dark skin
+- `"_dark_skin_tone`{.R}: dark skin
+
+```{markdown}
+`r emoji("waving_hand")`
+`r emoji("waving_hand_light_skin_tone")`
+`r emoji("waving_hand_medium_light_skin_tone")`
+`r emoji("waving_hand_medium_skin_tone")`
+`r emoji("waving_hand_medium_dark_skin_tone")`
+`r emoji("waving_hand_dark_skin_tone")`
+```
+
+`r emoji("waving_hand")`
+`r emoji("waving_hand_light_skin_tone")`
+`r emoji("waving_hand_medium_light_skin_tone")`
+`r emoji("waving_hand_medium_skin_tone")`
+`r emoji("waving_hand_medium_dark_skin_tone")`
+`r emoji("waving_hand_dark_skin_tone")`
 
 ## List of all the available emojis
 
@@ -54,16 +120,14 @@ Let us list all the emojis using the work done by Xiangdong Zeng: <https://githu
 emojis <- jsonlite::fromJSON("data/emoji.json")
 ```
 
-
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 #| tbl-cap: List of emojis
 #| label: emojis-latex
 library(tidyverse)
 emojis %>% 
   unnest(aliases) %>% 
-  select(emoji, alias = aliases, description, category, tags) %>% 
+  select(emoji, alias = aliases, description, category, tags, skin_tones) %>% 
+  rowwise() %>% 
   mutate(r_emoji = emoji(alias)) %>% 
   knitr::kable()
 ```
-
-
