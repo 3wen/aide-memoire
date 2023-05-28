@@ -8,7 +8,7 @@ library(ggtext)
 ```
 
 
-# Title and axis
+## Title and axis
 
 We use the `span` HTML element to put hexadecimal colors we desire for some text in the arguments `x`, `y` or `title` of the `labs()`{.R} function. Then, we need to update `theme()`{.R} function so that the elements `axis.title.x`, `axis.title.y`, and `plot.title` are correctly interpreted.
 
@@ -37,7 +37,7 @@ ggplot(
 ```
 
 
-# Facets
+## Facets
 
 First, we define the colours.
 ```{r}
@@ -85,7 +85,7 @@ ggplot(
 ```
 
 
-## With a different order for the facet elements
+### With a different order for the facet elements
 
 We can use a trick, using {forcats} `fct_reorder()`{.R} function:
 
