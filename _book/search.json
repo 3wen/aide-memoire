@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aide-mémoire",
+    "section": "",
+    "text": "Preface\nThis “ebook” serves as a quick reference guide for various programming tasks, numerical tools, and procedures. It contains code snippets and explanations related to R, LaTeX, Markdown, Quarto, and other relevant tools.\nThe creation of this document follows a discussion I had with Olivier L’Haridon who suggested the idea of such a document. Having been won over by the idea, I took the liberty of revisiting it. The primary motivation behind creating this project was to address a common issue I encountered in my programming and numerical work—having to search for specific procedures and codes that I don’t frequently use. I noticed that valuable time was often wasted trying to locate the exact location of these procedures within my notebooks, leading to delays and frustration.\nBy creating this “Aide-mémoire”, I aim to centralize and organize all the necessary information, codes, and procedures that I frequently need but might not remember off the top of my head. This way, I can quickly access and retrieve the required information whenever I encounter a similar task in my work.\nI believe that sharing this guide on GitHub and making it available online may be of interest for those who have already some bacground knowledge in R, Markdown, and LaTeX and face the similar problems."
+  },
+  {
+    "objectID": "r_colour_palettes.html#colours-that-are-ok-for-color-blindness-and-for-printers",
+    "href": "r_colour_palettes.html#colours-that-are-ok-for-color-blindness-and-for-printers",
+    "title": "1  Colours Palettes",
+    "section": "1.1 Colours that are ok for color blindness and for printers",
+    "text": "1.1 Colours that are ok for color blindness and for printers\n\n1.1.1 Palette 1\n\n\n\n\n\n\n#a6cee3\n\n\nrgb(166, 206, 227)\n\n\n\n#1f78b4\n\n\nrgb(31, 120, 180)\n\n\n\n#b2df8a\n\n\nrgb(178, 223, 138)\n\n\n\n\n\n1.1.2 Palette 2\n\n\n\n\n\n\n#1b9e77\n\n\nrgb(27, 158, 119)\n\n\n\n#d95f02\n\n\nrgb(217, 95, 2)\n\n\n\n#7570b3\n\n\nrgb(117, 112, 179)\n\n\n\n\n\n1.1.3 Palette 3\n\n\n\n\n\n\n#66c2a5\n\n\nrgb(102, 194, 165)\n\n\n\n#fc8d62\n\n\nrgb(252, 141, 98)\n\n\n\n#8da0cb\n\n\nrgb(141, 160, 203)"
+  },
+  {
+    "objectID": "r_colour_palettes.html#color-blind-friendly",
+    "href": "r_colour_palettes.html#color-blind-friendly",
+    "title": "1  Colours Palettes",
+    "section": "1.2 Color blind friendly",
+    "text": "1.2 Color blind friendly\n\n1.2.1 Palette 1\n\n\n\n\n\n\n#D81B60\n\n\nrgb(216, 27, 96)\n\n\n\n#1E88E5\n\n\nrgb(30, 136, 229)\n\n\n\n#FFC107\n\n\nrgb(255, 193, 7)\n\n\n\n#004D40\n\n\nrgb(0, 77, 64)\n\n\n\n\n\n1.2.2 Palette 2 (Wong)\nFrom Wong (2011).\n\n\n\n\n\n\n#000000\n\n\nrgb(0, 0, 0)\n\n\n\n#E69F00\n\n\nrgb(230, 159, 0)\n\n\n\n#56B4E9\n\n\nrgb(86, 180, 233)\n\n\n\n#009E73\n\n\nrgb(0, 158, 115)\n\n\n\n\n\n\n#000000\n\n\nrgb(240, 228, 66)\n\n\n\n#0072B2\n\n\nrgb(0, 114, 178)\n\n\n\n#D55E00\n\n\nrgb(213, 94, 0)\n\n\n\n#CC79A7\n\n\nrgb(204, 121, 167)\n\n\n\n\nwongBlack     <- \"#000000\"\nwongGold      <- \"#E69F00\"\nwongLightBlue <- \"#56B4E9\"\nwongGreen     <- \"#009E73\"\nwongYellow    <- \"#F0E442\"\nwongBlue      <- \"#0072B2\"\nwongOrange    <- \"#D55E00\"\nwongPurple    <- \"#CC79A7\"\n\n\n\\definecolor{wongBlack}{RGB}{0,0,0}\n\\definecolor{wongGold}{RGB}{230, 159, 0}\n\\definecolor{wongLightBlue}{RGB}{86, 180, 233}\n\\definecolor{wongGreen}{RGB}{0, 158, 115}\n\\definecolor{wongYellow}{RGB}{240, 228, 66}\n\\definecolor{wongBlue}{RGB}{0, 114, 178}\n\\definecolor{wongOrange}{RGB}{213, 94, 0}\n\\definecolor{wongPurple}{RGB}{204, 121, 167}\n\n\n\n1.2.3 Palette 3 (IBM)\n(The grey is an addition…)\n\n\n\n\n\n\n#648FFF\n\n\nrgb(100, 143, 255)\n\n\n\n#785EF0\n\n\nrgb(120, 94, 240)\n\n\n\n#DC267F\n\n\nrgb(220, 38, 127)\n\n\n\n\n\n\n#FE6100\n\n\nrgb(254, 97, 0)\n\n\n\n#FFB000\n\n\nrgb(255, 176, 0)\n\n\n\n#949698\n\n\nrgb(148, 150, 152)\n\n\n\n\nIBMBlue       <- \"#648FFF\"\nIBMPurple     <- \"#785EF0\"\nIBMMagenta    <- \"#DC267F\"\nIBMOrange     <- \"#FE6100\"\nIBMYellow     <- \"#FFB000\"\ngris          <- \"#949698\"\n\n\n\\definecolor{IBMBlue}{HTML}{648FFF}\n\\definecolor{IBMPurple}{HTML}{785EF0}\n\\definecolor{IBMMagenta}{HTML}{DC267F}\n\\definecolor{IBMOrange}{HTML}{FE6100}\n\\definecolor{IBMYellow}{HTML}{FFB000}\n\\definecolor{gris}{HTML}{949698}\n\n\n\n1.2.4 Palette 4\n\n\n\n\n\n\n#332288\n\n\nrgb(51, 34, 136)\n\n\n\n#117733\n\n\nrgb(17, 119, 51)\n\n\n\n#44AA99\n\n\nrgb(68, 170, 153)\n\n\n\n#88CCEE\n\n\nrgb(136, 204, 238)\n\n\n\n\n\n\n#DDCC77\n\n\nrgb(221, 204, 119)\n\n\n\n#CC6677\n\n\nrgb(204, 102, 119)\n\n\n\n#AA4499\n\n\nrgb(170, 68, 153)\n\n\n\n#882255\n\n\nrgb(136, 34, 85)\n\n\n\n\nbleuTOL <- \"#332288\"\nvertTOL <- \"#117733\"\nvertClairTOL <- \"#44AA99\"\nbleuClairTOL <- \"#88CCEE\"\nsableTOL <- \"#DDCC77\"\nparmeTOL <- \"#CC6677\"\nmagentaTOL <- \"#AA4499\"\nroseTOL <- \"#882255\"\n\n\n\\definecolor{bleuTOL}{HTML}{332288}\n\\definecolor{vertTOL}{HTML}{117733}\n\\definecolor{vertClairTOL}{HTML}{44AA99}\n\\definecolor{bleuClairTOL}{HTML}{88CCEE}\n\\definecolor{sableTOL}{HTML}{DDCC77}\n\\definecolor{parmeTOL}{HTML}{CC6677}\n\\definecolor{magentaTOL}{HTML}{AA4499}\n\\definecolor{roseTOL}{HTML}{882255}"
+  },
+  {
+    "objectID": "r_colour_palettes.html#aix-marseille-university-colors",
+    "href": "r_colour_palettes.html#aix-marseille-university-colors",
+    "title": "1  Colours Palettes",
+    "section": "1.3 Aix-Marseille University colors",
+    "text": "1.3 Aix-Marseille University colors\n\n1.3.1 Orange\n\n\n\n\n\n\n#FFA100\n\n\nrgb(255, 161, 0)\n\n\n\n#FB4F14\n\n\nrgb(251, 79, 20)\n\n\n\n#EBB700\n\n\nrgb(235, 183, 0)\n\n\n\n\norangeAMUClair <- \"#FFA100\"\norangeAMUFonce <- \"#FB4F14\"\njauneAMU <- \"#EBB700\"\n\n\n\\definecolor{orangeAMUClair}{RGB}{255,161,20}\n\\definecolor{orangeAMUFonce}{RGB}{251,79,189}\n\\definecolor{jauneAMU}{RGB}{235,183,0}\n\n\n\n1.3.2 Red\n\n\n\n\n\n\n#CF2F44\n\n\nrgb(207, 47, 68)\n\n\n\n#96172E\n\n\nrgb(150, 23, 46)\n\n\n\n#AA2F2F\n\n\nrgb(170, 47, 47)\n\n\n\n\nrougeAMUClair <- \"#CF2F44\"\nrougeAMUMoyen <- \"#96172E\"\nbordeauAMU <- \"#AA2F2F\"\n\n\n\\definecolor{rougeAMUClair}{RGB}{207,47,68}\n\\definecolor{rougeAMUMoyen}{RGB}{150,23,46}\n\\definecolor{bordeauAMU}{RGB}{170,47,47}\n\n\n\n1.3.3 Blue\n\n\n\n\n\n\n#5482AB\n\n\nrgb(84, 130, 171)\n\n\n\n#005A8B\n\n\nrgb(0, 90, 139)\n\n\n\n#00B0CA\n\n\nrgb(0, 176, 202)\n\n\n\n\nbleuAMUMoyen <- \"#5482AB\"\nbleuAMUFonce <- \"#005A8B\"\nbleuAMUClair <- \"#00B0CA\"\n\n\n\\definecolor{bleuAMUMoyen}{RGB}{84,130,171}\n\\definecolor{bleuAMUFonce}{RGB}{0,90,139}\n\\definecolor{bleuAMUClair}{RGB}{0,176,202}\n\n\n\n1.3.4 Green\n\n\n\n\n\n\n#61C250\n\n\nrgb(97, 194, 80)\n\n\n\n#A5D867\n\n\nrgb(165, 216, 103)\n\n\n\n#00693C\n\n\nrgb(0, 105, 60)\n\n\n\n\nvertAMUclair <- \"#61C250\"\nvertAMUPomme <- \"#A5D867\"\nvertAMUFonce <- \"#00693C\"\n\n\n\\definecolor{vertAMUclair}{RGB}{97,194,80}\n\\definecolor{vertAMUPomme}{RGB}{165,216,103}\n\\definecolor{vertAMUFonce}{RGB}{0,105,60}\n\n\n\n\n\nWong, Bang. 2011. “Color Blindness.” Nature Methods 8 (6): 441."
+  },
+  {
+    "objectID": "r_graphs_color_words_markdown.html",
+    "href": "r_graphs_color_words_markdown.html",
+    "title": "2  Word colouring on graphs",
+    "section": "",
+    "text": "3 Title and axis\nWe use the span HTML element to put hexadecimal colors we desire for some text in the arguments x, y or title of the labs() function. Then, we need to update theme() function so that the elements axis.title.x, axis.title.y, and plot.title are correctly interpreted.\nFirst, we define the colours.\nThen, using {glue}, we put the facet text in a span element, with the associated colour.\nThen, using {ggtext} element_markdown() function, the text can be interpreted as markdown."
+  },
+  {
+    "objectID": "r_graphs_color_words_markdown.html#with-a-different-order-for-the-facet-elements",
+    "href": "r_graphs_color_words_markdown.html#with-a-different-order-for-the-facet-elements",
+    "title": "2  Word colouring on graphs",
+    "section": "4.1 With a different order for the facet elements",
+    "text": "4.1 With a different order for the facet elements\nWe can use a trick, using {forcats} fct_reorder() function:\n\nIn a first step, we relevel the orginial variables that is used to create the faceting groups (not the one we just created to make it as a markdown string), using factor(), for example.\nIn a second step, we use the fct_reorder() on the variable used to create the faceting groups (the one we just created as a markdown string) and we apply the order of the numerical values corresponding to the levels of the releveled variables from Step 1.\n\n\ndf_plot <- \n  df_plot %>% \n  mutate(\n    Species = factor(\n      Species, levels = c(\"versicolor\", \"setosa\", \"virginica\")),\n    type = fct_reorder(type, as.numeric(Species))\n  )\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\nKeywords: ggplot2 markdown color colour"
+  },
+  {
     "objectID": "quarto_equation_colors.html#colors-defined-in-tex-xcolor-package",
     "href": "quarto_equation_colors.html#colors-defined-in-tex-xcolor-package",
     "title": "3  Colouring equations",
@@ -14,60 +56,32 @@
     "text": "3.2 Colouring words\nNow, what is we want to colour some words in the text, to match with the equations? Let us say that we want to describe the coefficient \\(\\beta\\) from the above example.\nLet us adapt the solution that was proposed in the Rmarkdown cookbook by Yihui Xie, Christophe Dervieux, and Emily Riederer (See Chapter 5).\n\nwongBlue <- \"#0072B2\"\n\ncolorize <- function(x, color) {\n  if (knitr::is_latex_output()) {\n    if (grep(x = color, \"^#\")) {\n      color <- deparse(substitute(color))\n    }\n    sprintf(\"\\\\textcolor{%s}{%s}\", color, x)\n  } else if (knitr::is_html_output()) {\n    sprintf(\"<span style='color: %s;'>%s</span>\", color,\n            x)\n  } else x\n}\n\nThis piece of code, as suggested by dj_a on stackoverflow can be saved in an R script, let us name it _myfunctions.R, and included in each qmd file that needs word to be be highlighted by a user-defined colour:\n```{r}\n#| echo: false\n#| eval: true\n#| message: false\n#| warning: false\n#| file: _myfunctions.R\n```\nThen all we need to do is call the colorize() function as an inline code:\n\nThe `r colorize(\"vector of coefficient\", wongBlue)`,\n$\\color{wongBlue}\\beta$, is to be estimated, with OLS.\n\nThe vector of coefficient, \\(\\color{wongBlue}\\beta\\), is to be estimated, with OLS."
   },
   {
-    "objectID": "colours.html#colours-that-are-ok-for-color-blindness-and-for-printers",
-    "href": "colours.html#colours-that-are-ok-for-color-blindness-and-for-printers",
-    "title": "1  Colours",
-    "section": "1.1 Colours that are ok for color blindness and for printers",
-    "text": "1.1 Colours that are ok for color blindness and for printers\n\n1.1.1 Palette 1\n\n\n\n\n\n\n#a6cee3\n\n\nrgb(166, 206, 227)\n\n\n\n#1f78b4\n\n\nrgb(31, 120, 180)\n\n\n\n#b2df8a\n\n\nrgb(178, 223, 138)\n\n\n\n\n\n1.1.2 Palette 2\n\n\n\n\n\n\n#1b9e77\n\n\nrgb(27, 158, 119)\n\n\n\n#d95f02\n\n\nrgb(217, 95, 2)\n\n\n\n#7570b3\n\n\nrgb(117, 112, 179)\n\n\n\n\n\n1.1.3 Palette 3\n\n\n\n\n\n\n#66c2a5\n\n\nrgb(102, 194, 165)\n\n\n\n#fc8d62\n\n\nrgb(252, 141, 98)\n\n\n\n#8da0cb\n\n\nrgb(141, 160, 203)"
-  },
-  {
-    "objectID": "colours.html#color-blind-friendly",
-    "href": "colours.html#color-blind-friendly",
-    "title": "1  Colours",
-    "section": "1.2 Color blind friendly",
-    "text": "1.2 Color blind friendly\n\n1.2.1 Palette 1\n\n\n\n\n\n\n#D81B60\n\n\nrgb(216, 27, 96)\n\n\n\n#1E88E5\n\n\nrgb(30, 136, 229)\n\n\n\n#FFC107\n\n\nrgb(255, 193, 7)\n\n\n\n#004D40\n\n\nrgb(0, 77, 64)\n\n\n\n\n\n1.2.2 Palette 2 (Wong)\nFrom Wong (2011).\n\n\n\n\n\n\n#000000\n\n\nrgb(0, 0, 0)\n\n\n\n#E69F00\n\n\nrgb(230, 159, 0)\n\n\n\n#56B4E9\n\n\nrgb(86, 180, 233)\n\n\n\n#009E73\n\n\nrgb(0, 158, 115)\n\n\n\n\n\n\n#000000\n\n\nrgb(240, 228, 66)\n\n\n\n#0072B2\n\n\nrgb(0, 114, 178)\n\n\n\n#D55E00\n\n\nrgb(213, 94, 0)\n\n\n\n#CC79A7\n\n\nrgb(204, 121, 167)\n\n\n\n\nwongBlack     <- \"#000000\"\nwongGold      <- \"#E69F00\"\nwongLightBlue <- \"#56B4E9\"\nwongGreen     <- \"#009E73\"\nwongYellow    <- \"#F0E442\"\nwongBlue      <- \"#0072B2\"\nwongOrange    <- \"#D55E00\"\nwongPurple    <- \"#CC79A7\"\n\n\n\\definecolor{wongBlack}{RGB}{0,0,0}\n\\definecolor{wongGold}{RGB}{230, 159, 0}\n\\definecolor{wongLightBlue}{RGB}{86, 180, 233}\n\\definecolor{wongGreen}{RGB}{0, 158, 115}\n\\definecolor{wongYellow}{RGB}{240, 228, 66}\n\\definecolor{wongBlue}{RGB}{0, 114, 178}\n\\definecolor{wongOrange}{RGB}{213, 94, 0}\n\\definecolor{wongPurple}{RGB}{204, 121, 167}\n\n\n\n1.2.3 Palette 3 (IBM)\n(The grey is an addition…)\n\n\n\n\n\n\n#648FFF\n\n\nrgb(100, 143, 255)\n\n\n\n#785EF0\n\n\nrgb(120, 94, 240)\n\n\n\n#DC267F\n\n\nrgb(220, 38, 127)\n\n\n\n\n\n\n#FE6100\n\n\nrgb(254, 97, 0)\n\n\n\n#FFB000\n\n\nrgb(255, 176, 0)\n\n\n\n#949698\n\n\nrgb(148, 150, 152)\n\n\n\n\nIBMBlue       <- \"#648FFF\"\nIBMPurple     <- \"#785EF0\"\nIBMMagenta    <- \"#DC267F\"\nIBMOrange     <- \"#FE6100\"\nIBMYellow     <- \"#FFB000\"\ngris          <- \"#949698\"\n\n\n\\definecolor{IBMBlue}{HTML}{648FFF}\n\\definecolor{IBMPurple}{HTML}{785EF0}\n\\definecolor{IBMMagenta}{HTML}{DC267F}\n\\definecolor{IBMOrange}{HTML}{FE6100}\n\\definecolor{IBMYellow}{HTML}{FFB000}\n\\definecolor{gris}{HTML}{949698}\n\n\n\n1.2.4 Palette 4\n\n\n\n\n\n\n#332288\n\n\nrgb(51, 34, 136)\n\n\n\n#117733\n\n\nrgb(17, 119, 51)\n\n\n\n#44AA99\n\n\nrgb(68, 170, 153)\n\n\n\n#88CCEE\n\n\nrgb(136, 204, 238)\n\n\n\n\n\n\n#DDCC77\n\n\nrgb(221, 204, 119)\n\n\n\n#CC6677\n\n\nrgb(204, 102, 119)\n\n\n\n#AA4499\n\n\nrgb(170, 68, 153)\n\n\n\n#882255\n\n\nrgb(136, 34, 85)\n\n\n\n\nbleuTOL <- \"#332288\"\nvertTOL <- \"#117733\"\nvertClairTOL <- \"#44AA99\"\nbleuClairTOL <- \"#88CCEE\"\nsableTOL <- \"#DDCC77\"\nparmeTOL <- \"#CC6677\"\nmagentaTOL <- \"#AA4499\"\nroseTOL <- \"#882255\"\n\n\n\\definecolor{bleuTOL}{HTML}{332288}\n\\definecolor{vertTOL}{HTML}{117733}\n\\definecolor{vertClairTOL}{HTML}{44AA99}\n\\definecolor{bleuClairTOL}{HTML}{88CCEE}\n\\definecolor{sableTOL}{HTML}{DDCC77}\n\\definecolor{parmeTOL}{HTML}{CC6677}\n\\definecolor{magentaTOL}{HTML}{AA4499}\n\\definecolor{roseTOL}{HTML}{882255}"
-  },
-  {
-    "objectID": "colours.html#aix-marseille-university-colors",
-    "href": "colours.html#aix-marseille-university-colors",
-    "title": "1  Colours",
-    "section": "1.3 Aix-Marseille University colors",
-    "text": "1.3 Aix-Marseille University colors\n\n1.3.1 Oranges\n\n\n\n\n\n\n#FFA100\n\n\nrgb(255, 161, 0)\n\n\n\n#FB4F14\n\n\nrgb(251, 79, 20)\n\n\n\n#EBB700\n\n\nrgb(235, 183, 0)\n\n\n\n\norangeAMUClair <- \"#FFA100\"\norangeAMUFonce <- \"#FB4F14\"\njauneAMU <- \"#EBB700\"\n\n\n\\definecolor{orangeAMUClair}{RGB}{255,161,20}\n\\definecolor{orangeAMUFonce}{RGB}{251,79,189}\n\\definecolor{jauneAMU}{RGB}{235,183,0}\n\n\n\n1.3.2 Rouges\n\n\n\n\n\n\n#CF2F44\n\n\nrgb(207, 47, 68)\n\n\n\n#96172E\n\n\nrgb(150, 23, 46)\n\n\n\n#AA2F2F\n\n\nrgb(170, 47, 47)\n\n\n\n\nrougeAMUClair <- \"#CF2F44\"\nrougeAMUMoyen <- \"#96172E\"\nbordeauAMU <- \"#AA2F2F\"\n\n\n\\definecolor{rougeAMUClair}{RGB}{207,47,68}\n\\definecolor{rougeAMUMoyen}{RGB}{150,23,46}\n\\definecolor{bordeauAMU}{RGB}{170,47,47}\n\n\n\n1.3.3 Bleus\n\n\n\n\n\n\n#5482AB\n\n\nrgb(84, 130, 171)\n\n\n\n#005A8B\n\n\nrgb(0, 90, 139)\n\n\n\n#00B0CA\n\n\nrgb(0, 176, 202)\n\n\n\n\nbleuAMUMoyen <- \"#5482AB\"\nbleuAMUFonce <- \"#005A8B\"\nbleuAMUClair <- \"#00B0CA\"\n\n\n\\definecolor{bleuAMUMoyen}{RGB}{84,130,171}\n\\definecolor{bleuAMUFonce}{RGB}{0,90,139}\n\\definecolor{bleuAMUClair}{RGB}{0,176,202}\n\n\n\n1.3.4 Verts\n\n\n\n\n\n\n#61C250\n\n\nrgb(97, 194, 80)\n\n\n\n#A5D867\n\n\nrgb(165, 216, 103)\n\n\n\n#00693C\n\n\nrgb(0, 105, 60)\n\n\n\n\nvertAMUclair <- \"#61C250\"\nvertAMUPomme <- \"#A5D867\"\nvertAMUFonce <- \"#00693C\"\n\n\n\\definecolor{vertAMUclair}{RGB}{97,194,80}\n\\definecolor{vertAMUPomme}{RGB}{165,216,103}\n\\definecolor{vertAMUFonce}{RGB}{0,105,60}\n\n\n\n\n\nWong, Bang. 2011. “Color Blindness.” Nature Methods 8 (6): 441."
-  },
-  {
-    "objectID": "color_words_markdown.html",
-    "href": "color_words_markdown.html",
-    "title": "2  Coloring words using markdown",
+    "objectID": "quarto_emojis.html",
+    "href": "quarto_emojis.html",
+    "title": "4  Insert emojis",
     "section": "",
-    "text": "3 Title and axis\nWe use the span HTML element to put hexadecimal colors we desire for some text in the arguments x, y or title of the labs() function. Then, we need to update theme() function so that the elements axis.title.x, axis.title.y, and plot.title are correctly interpreted.\nFirst, we define the colours.\nThen, using {glue}, we put the facet text in a span element, with the associated colour.\nThen, using {ggtext} element_markdown() function, the text can be interpreted as markdown."
-  },
-  {
-    "objectID": "color_words_markdown.html#with-a-different-order-for-the-facet-elements",
-    "href": "color_words_markdown.html#with-a-different-order-for-the-facet-elements",
-    "title": "2  Coloring words using markdown",
-    "section": "4.1 With a different order for the facet elements",
-    "text": "4.1 With a different order for the facet elements\nWe can use a trick, using {forcats} fct_reorder() function:\n\nIn a first step, we relevel the orginial variables that is used to create the faceting groups (not the one we just created to make it as a markdown string), using factor(), for example.\nIn a second step, we use the fct_reorder() on the variable used to create the faceting groups (the one we just created as a markdown string) and we apply the order of the numerical values corresponding to the levels of the releveled variables from Step 1.\n\n\ndf_plot <- \n  df_plot %>% \n  mutate(\n    Species = factor(\n      Species, levels = c(\"versicolor\", \"setosa\", \"virginica\")),\n    type = fct_reorder(type, as.numeric(Species))\n  )\n\nggplot(\n  data = df_plot,\n  mapping = aes(\n    x = Sepal.Length,\n    y = Sepal.Width\n  )\n) +\n  geom_point() +\n  facet_wrap(~type) +\n  theme(\n    strip.text = element_markdown(),\n    strip.text.x = element_markdown(),\n    strip.text.y = element_markdown()\n  )\n\n\n\n\nKeywords: ggplot2 markdown color colour"
+    "text": "[May 2023]\nThe other day, Bertille told me she had troubles with Quarto and Emojis: the latter did not appear in the PDF documents. I thought it was pretty simple and I did not remember struggling with that. I should have guessed, however, if that Bertille was having an issue, it was not not on something trivial. The former solution that was working (or at least I believe so) with R markdown does not work with quarto…\nAn issue was opened on quarto-dev: https://github.com/quarto-dev/quarto-cli/issues/4492, but the answer given by Susan VanderPlas unfortunately does not work on my computer. This is my workaround this issue.\n\nIn the YAML, insert the following, to support the emojis in the PDF: yml pdf:     documentclass: scrreprt     pdf-engine: lualatex     include-in-header:     - text: |         \\usepackage{emoji} This loads the {emoji} LaTeX package and as the latter requires lualatex as the pdf engine, we set the pdf engine to LuaLaTeX.\nTo make the emojis also available on the HTML file, we also need to add the following instruction in the YAML: yml from: markdown+emoji\nIn each qmd file where we need to include emojis, we can define the following function:\n\nemoji <- function(x) {\n  if (knitr::is_latex_output()) {\n sprintf(\"\\\\emoji{%s}\", x)\n  } else if (knitr::is_html_output()) {\n paste0(\":\", x, \":\")\n  } else x\n}\n\nIn the qmd file, to insert an emoji, we need to know its name or alias as defined in the {emoji} package documentation.\n\n`r emoji(\"weary\")`   \n\n\nHere is the result: 😩."
   },
   {
     "objectID": "git-rstudio.html#add-a-remote",
     "href": "git-rstudio.html#add-a-remote",
-    "title": "4  Git and RStudio",
-    "section": "4.1 Add a remote",
-    "text": "4.1 Add a remote\nWith a shell, go to the folder which will be associated with a Git repository:\ngit remote add origin https://github.com/3wen/repo-name.git\ngit pull origin main\ngit remote -v\nIf the Pull/Push buttons are not available on RStudio:\ngit fetch origin\ngit pull origin main"
+    "title": "5  Git and RStudio",
+    "section": "5.1 Add a remote",
+    "text": "5.1 Add a remote\nWith a shell, go to the folder which will be associated with a Git repository:\ngit remote add origin https://github.com/3wen/repo-name.git\ngit pull origin main\ngit remote -v\nIf the Pull/Push buttons are not available on RStudio:\ngit fetch origin\ngit pull origin main"
   },
   {
     "objectID": "git-rstudio.html#new-commit",
     "href": "git-rstudio.html#new-commit",
-    "title": "4  Git and RStudio",
-    "section": "4.2 New commit",
-    "text": "4.2 New commit\nIn RStudio:\n\nIn the Git tab, click on “Commit”\nA new window opens. Tick the box of each file to commit and add a commit message\nClick on the “Commit button”. This closes the window.\nIf you want to push the changes to the Git repository, in the Git tab, click on the “Push” button.\n\nOr, in a shell, to commit all changes:\ngit add --all\ngit commit -m \"Reason of the commit\"\ngit push -u origin main"
+    "title": "5  Git and RStudio",
+    "section": "5.2 New commit",
+    "text": "5.2 New commit\nIn RStudio:\n\nIn the Git tab, click on “Commit”\nA new window opens. Tick the box of each file to commit and add a commit message\nClick on the “Commit button”. This closes the window.\nIf you want to push the changes to the Git repository, in the Git tab, click on the “Push” button.\n\nOr, in a shell, to commit all changes:\ngit add --all\ngit commit -m \"Reason of the commit\"\ngit push -u origin main"
   },
   {
     "objectID": "git-rstudio.html#problem-with-main-branch",
     "href": "git-rstudio.html#problem-with-main-branch",
-    "title": "4  Git and RStudio",
-    "section": "4.3 Problem with main branch",
-    "text": "4.3 Problem with main branch\nTo list the local branches:\ngit branch\nTo delete a local branch:\ngit branch --delete <branchname>\nThen :\ngit push -u origin main"
+    "title": "5  Git and RStudio",
+    "section": "5.3 Problem with main branch",
+    "text": "5.3 Problem with main branch\nTo list the local branches:\ngit branch\nTo delete a local branch:\ngit branch --delete <branchname>\nThen :\ngit push -u origin main"
   },
   {
     "objectID": "references.html",

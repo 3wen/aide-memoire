@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Aide-memoire - 4&nbsp; Git and RStudio</title>
+<title>Aide-mémoire - 5&nbsp; Git and RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./quarto_equation_colors.html" rel="prev">
+<link href="./quarto_emojis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Git and RStudio</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git and RStudio</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Aide-memoire</a> 
+      <a href="./">Aide-mémoire</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/3wen/aide-memoire" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
 </div>
@@ -111,12 +111,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./colours.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Colours</span></a>
+  <a href="./r_colour_palettes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Colours Palettes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./color_words_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coloring words using markdown</span></a>
+  <a href="./r_graphs_color_words_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Word colouring on graphs</span></a>
   </div>
 </li>
       </ul>
@@ -134,6 +134,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./quarto_equation_colors.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colouring equations</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_emojis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Insert emojis</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -146,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./git-rstudio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Git and RStudio</span></a>
+  <a href="./git-rstudio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git and RStudio</span></a>
   </div>
 </li>
       </ul>
@@ -165,9 +170,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#add-a-remote" id="toc-add-a-remote" class="nav-link active" data-scroll-target="#add-a-remote"><span class="toc-section-number">4.1</span>  Add a remote</a></li>
-  <li><a href="#new-commit" id="toc-new-commit" class="nav-link" data-scroll-target="#new-commit"><span class="toc-section-number">4.2</span>  New commit</a></li>
-  <li><a href="#problem-with-main-branch" id="toc-problem-with-main-branch" class="nav-link" data-scroll-target="#problem-with-main-branch"><span class="toc-section-number">4.3</span>  Problem with main branch</a></li>
+  <li><a href="#add-a-remote" id="toc-add-a-remote" class="nav-link active" data-scroll-target="#add-a-remote"><span class="toc-section-number">5.1</span>  Add a remote</a></li>
+  <li><a href="#new-commit" id="toc-new-commit" class="nav-link" data-scroll-target="#new-commit"><span class="toc-section-number">5.2</span>  New commit</a></li>
+  <li><a href="#problem-with-main-branch" id="toc-problem-with-main-branch" class="nav-link" data-scroll-target="#problem-with-main-branch"><span class="toc-section-number">5.3</span>  Problem with main branch</a></li>
   </ul>
 </nav>
     </div>
@@ -176,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Git and RStudio</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git and RStudio</span></h1>
 </div>
 
 
@@ -192,8 +197,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>See Chapter 14 of this excellent ebook: <em>Happy Git and GitHub for the useR</em> by Jennifer Bryan <a href="https://happygitwithr.com/troubleshooting.html" class="uri">https://happygitwithr.com/troubleshooting.html</a></p>
-<section id="add-a-remote" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="add-a-remote"><span class="header-section-number">4.1</span> Add a remote</h2>
+<section id="add-a-remote" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="add-a-remote"><span class="header-section-number">5.1</span> Add a remote</h2>
 <p>With a shell, go to the folder which will be associated with a Git repository:</p>
 <pre class="{markdown}"><code>git remote add origin https://github.com/3wen/repo-name.git
 git pull origin main
@@ -202,8 +207,8 @@ git remote -v</code></pre>
 <pre class="{markdown}"><code>git fetch origin
 git pull origin main</code></pre>
 </section>
-<section id="new-commit" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="new-commit"><span class="header-section-number">4.2</span> New commit</h2>
+<section id="new-commit" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="new-commit"><span class="header-section-number">5.2</span> New commit</h2>
 <p>In RStudio:</p>
 <ul>
 <li>In the Git tab, click on “Commit”</li>
@@ -216,8 +221,8 @@ git pull origin main</code></pre>
 git commit -m "Reason of the commit"
 git push -u origin main</code></pre>
 </section>
-<section id="problem-with-main-branch" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="problem-with-main-branch"><span class="header-section-number">4.3</span> Problem with main branch</h2>
+<section id="problem-with-main-branch" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="problem-with-main-branch"><span class="header-section-number">5.3</span> Problem with main branch</h2>
 <p>To list the local branches:</p>
 <pre class="{markdown}"><code>git branch</code></pre>
 <p>To delete a local branch:</p>
@@ -364,8 +369,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./quarto_equation_colors.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colouring equations</span></span>
+      <a href="./quarto_emojis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Insert emojis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
