@@ -100,3 +100,45 @@ $\color{wongBlue}\beta$, is to be estimated, with OLS.
 
 The `r colorize("vector of coefficient", wongBlue)`, $\color{wongBlue}\beta$, is to be estimated, with OLS.
 
+
+## Colors in equations with revealjs
+
+
+First, we need to create a file that will contain the defined colors for mathjax. Let us name that file `mathjax-color.html`. Here is its content:
+```{html}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Register.StartupHook("TeX color Ready", function() {
+	     MathJax.Extension["TeX/color"].colors["wongBlack"] = '#000000';
+		 MathJax.Extension["TeX/color"].colors["wongGold"] = '#E69F00';
+		 MathJax.Extension["TeX/color"].colors["wongLightBlue"] = '#56B4E9';
+		 MathJax.Extension["TeX/color"].colors["wongGreen"] = '#009E73';
+		 MathJax.Extension["TeX/color"].colors["wongYellow"] = '#F0E442';
+		 MathJax.Extension["TeX/color"].colors["wongBlue"] = '#0072B2';
+		 MathJax.Extension["TeX/color"].colors["wongOrange"] = '#D55E00';
+		 MathJax.Extension["TeX/color"].colors["wongPurple"] = '#CC79A7';
+		 
+		 
+		 MathJax.Extension["TeX/color"].colors["IBMBlue"] = '#648FFF';
+		 MathJax.Extension["TeX/color"].colors["IBMPurple"] = '#785EF0';
+		 MathJax.Extension["TeX/color"].colors["IBMMagenta"] = '#DC267F';
+		 MathJax.Extension["TeX/color"].colors["IBMOrange"] = '#FE6100';
+		 MathJax.Extension["TeX/color"].colors["IBMYellow"] = '#FFB000';
+	});
+</script>
+```
+
+
+Then, in the YAML of the presentation file, we need to include that file:
+```{markdown}
+format: 
+  revealjs:
+    theme: [dark, custom.scss]
+    include-in-header:
+    - file: mathjax-color.html
+```
+
+
+That's it, we can use `\color{}` inside equations in the presentation.
