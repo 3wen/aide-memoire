@@ -203,6 +203,13 @@ rgb(141, 160, 203)
 
 ## Color blind friendly
 
+There is a nice R package, {[prismatic](https://cran.r-project.org/web/packages/prismatic/index.html)} that allows to visualize color vision deficiency.
+```{r}
+cols <- c("D81B60", "1E88E5", "FFC107", "004D40")
+prismatic::check_color_blindness(paste0("#", cols))
+```
+
+
 ### Palette 1
 
 ```{css, echo=FALSE}
