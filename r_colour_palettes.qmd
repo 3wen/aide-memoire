@@ -372,7 +372,7 @@ rgb(0, 158, 115)
 #| class-source: color-wong-yellow
 #| classes: color-wong-yellow
 #| 
-#000000
+#F0E442
 ```
 ```{markdown, eval=FALSE}
 #| class-source: color-wong-yellow
