@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Aide-mémoire - 3&nbsp; Colours in equations</title>
+<title>Aide-mémoire - 4&nbsp; Colours in equations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./quarto_emojis.html" rel="next">
-<link href="./r_graphs_color_words_markdown.html" rel="prev">
+<link href="./r_base_plot_latex.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_equation_colors.html">Quarto</a></li><li class="breadcrumb-item"><a href="./quarto_equation_colors.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colours in equations</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_equation_colors.html">Quarto</a></li><li class="breadcrumb-item"><a href="./quarto_equation_colors.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Colours in equations</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -165,6 +165,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Word colouring on graphs</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r_base_plot_latex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">LaTeX in Base Plot</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -179,13 +185,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto_equation_colors.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colours in equations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Colours in equations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto_emojis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Insert emojis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insert emojis</span></span></a>
   </div>
 </li>
       </ul>
@@ -202,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Git and RStudio</span></span></a>
   </div>
 </li>
       </ul>
@@ -223,10 +229,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#colors-defined-in-latex-xcolor-package" id="toc-colors-defined-in-latex-xcolor-package" class="nav-link active" data-scroll-target="#colors-defined-in-latex-xcolor-package"><span class="header-section-number">3.1</span> Colors defined in LaTeX xcolor package</a></li>
-  <li><a href="#colors-defined-by-the-user" id="toc-colors-defined-by-the-user" class="nav-link" data-scroll-target="#colors-defined-by-the-user"><span class="header-section-number">3.2</span> Colors defined by the user</a></li>
-  <li><a href="#colouring-words" id="toc-colouring-words" class="nav-link" data-scroll-target="#colouring-words"><span class="header-section-number">3.3</span> Colouring words</a></li>
-  <li><a href="#colors-in-equations-with-revealjs" id="toc-colors-in-equations-with-revealjs" class="nav-link" data-scroll-target="#colors-in-equations-with-revealjs"><span class="header-section-number">3.4</span> Colors in equations with revealjs</a></li>
+  <li><a href="#colors-defined-in-latex-xcolor-package" id="toc-colors-defined-in-latex-xcolor-package" class="nav-link active" data-scroll-target="#colors-defined-in-latex-xcolor-package"><span class="header-section-number">4.1</span> Colors defined in LaTeX xcolor package</a></li>
+  <li><a href="#colors-defined-by-the-user" id="toc-colors-defined-by-the-user" class="nav-link" data-scroll-target="#colors-defined-by-the-user"><span class="header-section-number">4.2</span> Colors defined by the user</a></li>
+  <li><a href="#colouring-words" id="toc-colouring-words" class="nav-link" data-scroll-target="#colouring-words"><span class="header-section-number">4.3</span> Colouring words</a></li>
+  <li><a href="#colors-in-equations-with-revealjs" id="toc-colors-in-equations-with-revealjs" class="nav-link" data-scroll-target="#colors-in-equations-with-revealjs"><span class="header-section-number">4.4</span> Colors in equations with revealjs</a></li>
   </ul>
 </nav>
     </div>
@@ -235,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Colours in equations</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Colours in equations</span></h1>
 </div>
 
 
@@ -253,16 +259,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="math display">\[
 \definecolor{wongBlue}{RGB}{0, 114, 178}
 \]</span></p>
-<section id="colors-defined-in-latex-xcolor-package" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="colors-defined-in-latex-xcolor-package"><span class="header-section-number">3.1</span> Colors defined in LaTeX xcolor package</h2>
+<section id="colors-defined-in-latex-xcolor-package" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="colors-defined-in-latex-xcolor-package"><span class="header-section-number">4.1</span> Colors defined in LaTeX xcolor package</h2>
 <p>Let us say we have a quarto book we are working on and we would like the <span class="math inline">\(\beta\)</span> term in the following equation to appear in blue: <span class="math display">\[y = X\beta + \varepsilon\]</span> The following solution is easy:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$y = X{</span><span class="sc">\color</span><span class="ss">{blue}</span><span class="sc">\beta</span><span class="ss">} + </span><span class="sc">\varepsilon</span><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><span class="math display">\[y = X{\color{blue}\beta} + \varepsilon\]</span></p>
 </section>
-<section id="colors-defined-by-the-user" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="colors-defined-by-the-user"><span class="header-section-number">3.2</span> Colors defined by the user</h2>
+<section id="colors-defined-by-the-user" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="colors-defined-by-the-user"><span class="header-section-number">4.2</span> Colors defined by the user</h2>
 <p>However, what if we want the color to be a different blue, one that we define? For example, what if we want the color whose hexadecimal code is <code>#0072B2</code>?</p>
 <ol type="1">
 <li><p>In the <code>qmd</code> file in which the equation appears, we need to define the color using a LaTeX definition. Note that the RGB code is required. For some reasons I do not understand, we cannot use the HTML model.</p>
@@ -298,8 +304,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="colouring-words" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="colouring-words"><span class="header-section-number">3.3</span> Colouring words</h2>
+<section id="colouring-words" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="colouring-words"><span class="header-section-number">4.3</span> Colouring words</h2>
 <p>Now, what is we want to colour some words in the text, to match with the equations? Let us say that we want to describe the coefficient <span class="math inline">\(\beta\)</span> from the above example.</p>
 <p>Let us adapt the solution that was proposed in the Rmarkdown cookbook by Yihui Xie, Christophe Dervieux, and Emily Riederer (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html#using-an-r-function-to-write-raw-html-or-latex-code">See Chapter 5</a>).</p>
 <div class="cell">
@@ -332,8 +338,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The <span style="color: #0072B2;">vector of coefficient</span>, <span class="math inline">\(\color{wongBlue}\beta\)</span>, is to be estimated, with OLS.</p>
 </section>
-<section id="colors-in-equations-with-revealjs" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="colors-in-equations-with-revealjs"><span class="header-section-number">3.4</span> Colors in equations with revealjs</h2>
+<section id="colors-in-equations-with-revealjs" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="colors-in-equations-with-revealjs"><span class="header-section-number">4.4</span> Colors in equations with revealjs</h2>
 <p>First, we need to create a file that will contain the defined colors for mathjax. Let us name that file <code>mathjax-color.html</code>. Here is its content:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"text/x-mathjax-config"</span><span class="kw">&gt;</span></span>
@@ -608,13 +614,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_graphs_color_words_markdown.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Word colouring on graphs</span></span>
+      <a href="./r_base_plot_latex.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">LaTeX in Base Plot</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./quarto_emojis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Insert emojis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insert emojis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

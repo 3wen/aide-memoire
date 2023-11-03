@@ -1,0 +1,102 @@
+# LaTeX in Base Plot
+
+I want to display LaTeX equations as the names on one of the axis, using basic plot. I will do this using the `TeX()`{.R} function from {latex2exp}.
+
+Let us generate some dummy data:
+```{r}
+library(dplyr)
+n <- 100
+tb <- tibble(
+  class = rep(
+    c("Model 1 with $X \\sim N(0,1)$",
+      "Model 2 with $X \\sim N(1,1)$"),
+    each = n
+  ),
+  y = c(
+    rnorm(n = n, mean = 0, sd = 1),
+    rnorm(n = n, mean = 1, sd = 1)
+  )
+) |> 
+  mutate(
+    class = factor(class)
+  )
+tb
+```
+
+The levels:
+
+```{r}
+lvls <- levels(tb$class)
+lvls
+```
+
+
+```{r}
+par(mar = c(2.1, 10.1, 2.1, 2.1))
+boxplot(
+  y ~ class,
+  data = tb,
+  horizontal = TRUE,
+  las = 1,
+  xlab = NULL, ylab = NULL,
+  yaxt = "n"
+)
+
+
+# Setting the y axis (with the LaTeX expressions)
+axis(
+  2, 
+  at = 1:length(lvls), 
+  labels = c(latex2exp::TeX(lvls)),
+  las = 2
+)
+```
+
+
+::: {.callout-note}
+
+Unfortunately, the `\mathcal{}` is not supported by R.
+
+:::
+
+
+Now, what if we want to add a new line to the labels? It becomes a bit ugly...
+
+```{r}
+
+tb <- tibble(
+  class = rep(
+    c(
+      "$\\overset{\\normalsize{Model~1~with}}{X \\sim N(0,1)}$",
+      "$\\overset{\\normalsize{Model~2~with}}{X \\sim N(1,1)}$"
+    ),
+    each = n
+  ),
+  y = c(
+    rnorm(n = n, mean = 0, sd = 1),
+    rnorm(n = n, mean = 1, sd = 1)
+  )
+) |> 
+  mutate(
+    class = factor(class)
+  )
+lvls <- levels(tb$class)
+
+par(mar = c(2.1, 7.1, 2.1, 2.1))
+boxplot(
+  y ~ class,
+  data = tb,
+  horizontal = TRUE,
+  las = 1,
+  xlab = NULL, ylab = NULL,
+  yaxt = "n"
+)
+# Setting the y axis (with the LaTeX expressions)
+axis(
+  2, 
+  at = 1:length(lvls), 
+  labels = c(latex2exp::TeX(lvls)),
+  las = 2
+)
+```
+
