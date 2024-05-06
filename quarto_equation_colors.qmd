@@ -135,10 +135,27 @@ Then, in the YAML of the presentation file, we need to include that file:
 ```{markdown}
 format: 
   revealjs:
+    html-math-method: mathjax
     theme: [dark, custom.scss]
     include-in-header:
     - file: mathjax-color.html
 ```
+
+
+Lastly, we need to define (again?!) the colours in the qmd file.
+   ```{markdown}
+$$
+\definecolor{wongBlack}{RGB}{0,0,0}
+\definecolor{wongGold}{RGB}{230, 159, 0}
+\definecolor{wongLightBlue}{RGB}{86, 180, 233}
+\definecolor{wongGreen}{RGB}{0, 158, 115}
+\definecolor{wongYellow}{RGB}{240, 228, 66}
+\definecolor{wongBlue}{RGB}{0, 114, 178}
+\definecolor{wongOrange}{RGB}{213, 94, 0}
+\definecolor{wongPurple}{RGB}{204, 121, 167}
+$$
+   ```
+
 
 
 That's it, we can use `\color{}` inside equations in the presentation.
