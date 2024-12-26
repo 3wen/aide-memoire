@@ -1,11 +1,15 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Aide-mémoire"
-  author: "Ewen Gallic"
-  date: "5/27/2023"
-  repo-url: https://github.com/3wen/aide-memoire
+  author:
+  - name: Ewen Gallic
+    orcid: 0000-0003-3740-2620
+    affiliations:
+      - name: Aix-Marseille School of Economics, Aix-Marseille Univ.
+  date: "12/26/2024"
   chapters:
     - index.qmd
     - part: R
@@ -13,6 +17,7 @@ book:
       - r_colour_palettes.qmd
       - r_graphs_color_words_markdown.qmd
       - r_base_plot_latex.qmd
+      - r_ggplot2.qmd
     - part: Quarto
       chapters:
       - quarto_equation_colors.qmd
@@ -21,22 +26,23 @@ book:
       chapters:
       - git-rstudio.qmd
     - references.qmd
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/3wen/aide-memoire
+        aria-label: GitHub
 
-bibliography: references.bib
+bibliography: ./references.bib
 
-from: markdown+emoji
-
+fig-cap-location: top
 
 format:
   html:
+    from: markdown+emoji
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
-    pdf-engine: lualatex
+    highlight-style: github
+    html-math-method: mathjax
     include-in-header:
-    - text: |
-        \usepackage{emoji}
-        \usepackage{xcolor}
-        \definecolor{wongBlue}{RGB}{0, 114, 178}
+    - file: mathjax-color.html
 
 editor: source

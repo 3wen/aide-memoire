@@ -1,5 +1,10 @@
 # Insert emojis
 
+```{r, eval=FALSE}
+remotes::install_github("hadley/emo")
+```
+
+
 \[May 2023\]
 
 The other day, [Bertille Picard](https://bertillepicard.github.io/) told me she had troubles with Quarto and Emojis: the latter did not appear in the PDF documents. I thought it was pretty simple and I did not remember struggling with that. I should have guessed, however, if that Bertille was having an issue, it was not not on something trivial. The former solution that was working (or at least I believe so) with R markdown does not work with quarto...
@@ -124,10 +129,11 @@ emojis <- jsonlite::fromJSON("data/emoji.json")
 #| tbl-cap: List of emojis
 #| label: emojis-latex
 library(tidyverse)
-emojis %>% 
-  unnest(aliases) %>% 
-  select(emoji, alias = aliases, description, category, tags, skin_tones) %>% 
-  rowwise() %>% 
-  mutate(r_emoji = emoji(alias)) %>% 
+emojis |> 
+  unnest(aliases) |> 
+  select(emoji, alias = aliases, description, category, tags, skin_tones) |> 
+  rowwise() |> 
+  filter(! alias %in% c("-1", "t-rex")) |> 
+  mutate(r_emoji = emoji(alias)) |> 
   knitr::kable()
 ```

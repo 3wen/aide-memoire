@@ -1,0 +1,15 @@
+# ggplot2
+
+## LaTeX in scale
+
+I want to interpret LaTeX formulas contained in a column of a dataset used to plot observations. The easiest way I found to do so is to use the `TeX()`{.R} function from {latex2exp} passed on to the `labels` argument of the `scale_y_discrete()`{.R} from {ggplot2}.
+
+```{r}
+library(tibble)
+library(ggplot2)
+df <- tibble(x = c(1,2,3), y = c("Some text $A \\leq 2$", "$A = 2$", "$A \\geq 2$"))
+ggplot(data = df, mapping = aes(x = x, y = y)) +
+  geom_bar(stat = "identity") +
+  scale_y_discrete(labels = function(labels) latex2exp::TeX(labels))
+```
+

@@ -7,14 +7,14 @@ See Chapter 14 of this excellent ebook: _Happy Git and GitHub for the useR_ by J
 
 With a shell, go to the folder which will be associated with a Git repository:
 
-```{markdown}
+``` markdown
 git remote add origin https://github.com/3wen/repo-name.git
 git pull origin main
 git remote -v
 ```
 
 If the Pull/Push buttons are not available on RStudio:
-```{markdown}
+``` markdown
 git fetch origin
 git pull origin main
 ```
@@ -32,7 +32,7 @@ In RStudio:
 
 Or, in a shell, to commit all changes:
 
-```{markdown}
+``` markdown
 git add --all
 git commit -m "Reason of the commit"
 git push -u origin main
@@ -42,18 +42,18 @@ git push -u origin main
 
 
 To list the local branches:
-```{markdown}
+``` markdown
 git branch
 ```
 
 To delete a local branch:
 
-```{markdown}
+``` markdown
 git branch --delete <branchname>
 ```
 
 Then :
-```{markdown}
+``` markdown
 git push -u origin main
 ```
 

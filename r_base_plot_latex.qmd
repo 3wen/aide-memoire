@@ -1,4 +1,6 @@
-# LaTeX in Base Plot
+# Base Plots
+
+## LaTeX Expressions
 
 I want to display LaTeX equations as the names on one of the axis, using basic plot. I will do this using the `TeX()`{.R} function from {latex2exp}.
 
